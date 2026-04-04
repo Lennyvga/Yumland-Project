@@ -27,7 +27,7 @@ if (isset($_POST['id_produit'])) {
 }
 
     if (isset($_POST['provenance']) && $_POST['provenance'] == 'panier') {
-        header("Location: panier.php");
+        header("Location: menu.php");
 } 
     else {
     header("Location: menu.php");
