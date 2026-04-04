@@ -59,7 +59,7 @@
             
             <div class="sousligne">
                 <label for="Tel">Téléphone</label><br>
-                <input type="tel" id="Tel" name="Téléphone" pattern="(?=.*[A-Z]).{8,}" required><br><br>
+                <input type="tel" id="Tel" name="Téléphone" pattern="[0-9]{10}" placeholder="0612345678" " required><br><br>
             </div>
       </div>
       <div class="ligne">
