@@ -32,7 +32,7 @@
     
 <div class="notation-wrapper">
 
-        <h1 class="section-title">Votre avis compte ⭐</h1>
+        <h1 class="section-title">Votre avis compte! ⭐</h1>
         <p class="notation-subtitle">Dites-nous ce que vous avez pensé de votre expérience chez Bella Ciao.</p>
        <div class="rating">
 <form action="" method="POST" class="notation-form"></form>
