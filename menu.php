@@ -194,7 +194,7 @@
         </div>
 
             <div class="send" >
-                <a class="btn" href="menu.php">Mon panier de commande</a>
+                <a class="btn" href="panier.php">Mon panier de commande</a>
             </div>
 
     </div>
