@@ -29,7 +29,7 @@
 </nav>
 
     <div class="form-wrapper">
-        <div class="nomrestaurant" id="entete-blanc">Mes Informations</div>
+        <div class="nomrestaurant" id="entete-blanc">Mes Informations:</div>
         <br><br>
 
         <div class="ligne">
