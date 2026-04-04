@@ -5,70 +5,80 @@
       "nom": "Pizza Margherita",
       "description": "Tomate, mozzarella, basilic",
       "prix": 12,
-      "categorie": "pizzas"
+      "categorie": "pizzas",
+      "image": "pizza-margherita.jpg"
     },
     {
       "id": "p2",
       "nom": "Pizza 4 Fromages",
       "description": "Mozzarella, gorgonzola, chèvre, parmesan",
       "prix": 15,
-      "categorie": "pizzas"
+      "categorie": "pizzas",
+      "image": "pizza-4fromages.jpg"
     },
     {
       "id": "p3",
       "nom": "Pizza Pepperoni",
       "description": "Tomate, mozzarella, pepperoni",
       "prix": 14,
-      "categorie": "pizzas"
+      "categorie": "pizzas",
+      "image": "pizza-pepperoni.jpg"
     },
     {
       "id": "p4",
       "nom": "Pizza Végétarienne",
       "description": "Légumes grillés, mozzarella",
       "prix": 13,
-      "categorie": "pizzas"
+      "categorie": "pizzas",
+      "image": "pizza-vegetarienne.jpg"
     },
     {
       "id": "p5",
       "nom": "Pizza Calzone",
       "description": "Tomate, jambon, champignons",
       "prix": 16,
-      "categorie": "pizzas"
+      "categorie": "pizzas",
+      "image": "pizza-calzone.jpg"
     },
     {
       "id": "p6",
       "nom": "Pasta Carbonara",
       "description": "Pâtes fraîches, œufs, pancetta, parmesan",
       "prix": 14,
-      "categorie": "pates"
+      "categorie": "pates",
+      "image": "pasta.jpg"
     },
     {
       "id": "p7",
       "nom": "Pasta Pesto",
       "description": "Pesto basilic, parmesan",
       "prix": 13,
-      "categorie": "pates"
+      "categorie": "pates",
+      "image": "pasta-pesto.jpg"
     },
     {
       "id": "p8",
       "nom": "Tiramisu",
       "description": "Mascarpone, café, cacao",
       "prix": 7,
-      "categorie": "desserts"
+      "categorie": "desserts",
+      "image": "tiramisu.jpg"
     },
     {
       "id": "p9",
       "nom": "Panna Cotta",
       "description": "Vanille, coulis fruits rouges",
       "prix": 6,
-      "categorie": "desserts"
+      "categorie": "desserts",
+      "image": "pannacotta.jpg"
     },
     {
       "id": "p10",
       "nom": "Cannoli Siciliens",
       "description": "Crème ricotta",
       "prix": 8,
-      "categorie": "desserts"
+      "categorie": "desserts",
+      "image": "cannoli.jpg"
     }
   ]
 }
