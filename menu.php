@@ -1,204 +1,103 @@
+<?php
+$json = file_get_contents("plats.json");
+$data = json_decode($json, true);
+$plats = $data['plats'];
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Bella Ciao Ristorante - Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    
+
 <body class="page-inscription">
-        <nav class="navbar">
-    <div class="container nav-content">
-        <div class="logo">Bella Ciao</div>
-        <div class="nav-links">
-            <a href="index.php">Accueil</a>
-            <a href="menu.php">Menu</a>
-            <a href="notation.php">Notation</a>
-            <a href="connexion.php">Se connecter</a>
-            <a href="inscription.php">S'inscrire</a>
-            <div class="dropdown">
-                <a href="" class="nav-links">Profil ⏷</a>
-                <div class="dropdown-content">
-                    <a href="informations.php">Mes informations</a>
-                    <a href="commandes.php">Mes commandes</a>
-                    <a href="compte+.php">Mon compte Bella Ciao +</a>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Bella Ciao</div>
+            <div class="nav-links">
+                <a href="index.php">Accueil</a>
+                <a href="menu.php">Menu</a>
+                <a href="notation.php">Notation</a>
+                <a href="connexion.php">Se connecter</a>
+                <a href="inscription.php">S'inscrire</a>
+                <div class="dropdown">
+                    <a href="" class="nav-links">Profil ⏷</a>
+                    <div class="dropdown-content">
+                        <a href="informations.php">Mes informations</a>
+                        <a href="commandes.php">Mes commandes</a>
+                        <a href="compte+.php">Mon compte Bella Ciao +</a>
+                    </div>
                 </div>
-             </div>
 
-        </div>
-    </div>
-</nav>
-
-
-<section class="menu">
-    <div class="container">
-        <h2 class="section-title">Notre Carte</h2>
-
-        
-        <div class="search">
-            <input type="text" placeholder="Rechercher un plat...">
-            <button class="btn">Rechercher</button>
-        </div>
-
-      
-        <div class="filters">
-            <button class="filter-btn" >Tous</button>
-            <button class="filter-btn" >Pizzas</button>
-            <button class="filter-btn" >Pâtes</button>
-            <button class="filter-btn" >Desserts</button>
-            <button class="filter-btn" >Allergènes</button>
-        </div>
-
-       
-        
-        <div class="cards">
-
-            
-            <div class="card" data-category="pizzas">
-                <img src="images/pizza-margherita.jpg" alt="Pizza Margherita">
-                <div class="card-body">
-                    <h3 class="card-title">Pizza Margherita</h3>
-                    <p>Tomate, mozzarella, basilic</p>
-                    <div class="price">12€</div>
-                    
-                    <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p1">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-                    
-                </div>
             </div>
-            <div class="card" data-category="pizzas">
-               <img src="images/pizza-4fromages.jpg" alt="Pizza 4 Fromages">
-               <div class="card-body">
-                    <h3 class="card-title">Pizza 4 Fromages</h3>
-                    <p>Mozzarella, gorgonzola, chèvre, parmesan</p>
-                    <div class="price">15€</div>
-
-                     <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p2">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-                    
-</div>
-</div>
-                <div class="card" data-category="pizzas">
-                   <img src="images/pizza-pepperoni.jpg" alt="Pizza Pepperoni">
-                    <div class="card-body">
-                        <h3 class="card-title">Pizza Pepperoni</h3>
-                        <p>Tomate, mozzarella, pepperoni</p>
-                        <div class="price">14€</div>
-                        
-                        <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p3">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-</div>
-</div>
-
-                <div class="card" data-category="pizzas">
-                    <img src="images/pizza-vegetarienne.jpg" alt="Pizza Végétarienne">
-                    <div class="card-body">
-                        <h3 class="card-title">Pizza Végétarienne</h3>
-                        <p>Légumes grillés, mozzarella</p>
-                        <div class="price">13€</div>
-                        
-                        <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p4">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-</div>
-</div>
-
-                <div class="card" data-category="pizzas">
-                    <img src="images/pizza-calzone.jpg" alt="Pizza Calzone">
-                    <div class="card-body">
-                        <h3 class="card-title">Pizza Calzone</h3>
-                        <p>Tomate, jambon, champignons</p>
-                        <div class="price">16€</div>
-                        
-                        <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p5">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-</div>
-</div>
-
-            <div class="card" data-category="pates">
-                <img src="images/pasta.jpg" alt="Pasta Carbonara">
-                <div class="card-body">
-                    <h3 class="card-title">Pasta Carbonara</h3>
-                    <p>Pâtes fraîches, œufs, pancetta, parmesan</p>
-                    <div class="price">14€</div>
-                    
-                    <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p6">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-                </div>
-            </div>
-            <div class="card" data-category="pates">
-                <img src="images/pasta-pesto.jpg" alt="Pasta Pesto">
-                <div class="card-body">
-                <h3 class="card-title">Pasta Pesto</h3>
-                <p>Pesto basilic, parmesan</p>
-                <div class="price">13€</div>
-                
-                <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p7">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-</div>
-</div>
-            <div class="card" data-category="desserts">
-                <img src="images/tiramisu.jpg" >
-                <div class="card-body">
-                    <h3 class="card-title">Tiramisu</h3>
-                    <p>Mascarpone, café, cacao</p>
-                    <div class="price">7€</div>
-                    
-                    <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p8">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-                </div>
-            </div>
-            <div class="card" data-category="desserts">
-                <img src="images/pannacotta.jpg" alt="Panna Cotta">
-                <div class="card-body">
-                <h3 class="card-title">Panna Cotta</h3> 
-                <p>Vanille, coulis fruits rouges</p>
-                <div class="price">6€</div>
-                
-                <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p9">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-</div>
-</div>
-
-                    <div class="card" data-category="desserts">
-                    <img src="images/cannoli.jpg" alt="Cannoli">
-                    <div class="card-body">
-                    <h3 class="card-title">Cannoli Siciliens</h3>
-                    <p>Crème ricotta</p>
-                    <div class="price">8€</div>
-
-                    <form method="POST" action="ajouter.php">
-                        <input type="hidden" name="id_produit" value="p10">
-                        <button type="submit" class="btn">Commander</button>
-                    </form>
-</div>
-</div>
-        
         </div>
+    </nav>
 
-            <div class="send" >
+
+    <section class="menu">
+        <div class="container">
+            <h2 class="section-title">Notre Carte</h2>
+
+
+            <div class="search">
+                <input type="text" placeholder="Rechercher un plat...">
+                <button class="btn">Rechercher</button>
+            </div>
+
+
+            <div class="filters">
+                <button class="filter-btn">Tous</button>
+                <button class="filter-btn">Pizzas</button>
+                <button class="filter-btn">Pâtes</button>
+                <button class="filter-btn">Desserts</button>
+                <button class="filter-btn">Allergènes</button>
+            </div>
+
+
+
+            <div class="cards">
+
+                <div class="cards">
+                    <?php foreach($plats as $plat): ?>
+                    <div class="card" data-category="<?php echo $plat['categorie']; ?>">
+                        <img src="images/<?php echo $plat['image']; ?>" alt="<?php echo $plat['nom']; ?>">
+                        <div class="card-body">
+                            <h3 class="card-title"><?php echo $plat['nom']; ?></h3>
+                            <p><?php echo $plat['description']; ?></p>
+                            <div class="price"><?php echo $plat['prix']; ?>€</div>
+                            <form method="POST" action="ajouter.php">
+                                <input type="hidden" name="id_produit" value="<?php echo $plat['id']; ?>">
+                                <button type="submit" class="btn">Commander</button>
+                            </form>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+
+                </div>
+
+
+            </div>
+
+            <div class="send">
                 <a class="btn" href="panier.php">Mon panier de commande</a>
             </div>
 
-    </div>
-</section>
+        </div>
+    </section>
+
+
+    <footer>
+        Bella Ciao Ristorante © 2026
+    </footer>
+
+</body>
+
+</html>
 
 
 <footer>
