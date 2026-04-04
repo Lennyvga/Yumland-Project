@@ -1,0 +1,74 @@
+{
+  "plats": [
+    {
+      "id": "p1",
+      "nom": "Pizza Margherita",
+      "description": "Tomate, mozzarella, basilic",
+      "prix": 12,
+      "categorie": "pizzas"
+    },
+    {
+      "id": "p2",
+      "nom": "Pizza 4 Fromages",
+      "description": "Mozzarella, gorgonzola, chèvre, parmesan",
+      "prix": 15,
+      "categorie": "pizzas"
+    },
+    {
+      "id": "p3",
+      "nom": "Pizza Pepperoni",
+      "description": "Tomate, mozzarella, pepperoni",
+      "prix": 14,
+      "categorie": "pizzas"
+    },
+    {
+      "id": "p4",
+      "nom": "Pizza Végétarienne",
+      "description": "Légumes grillés, mozzarella",
+      "prix": 13,
+      "categorie": "pizzas"
+    },
+    {
+      "id": "p5",
+      "nom": "Pizza Calzone",
+      "description": "Tomate, jambon, champignons",
+      "prix": 16,
+      "categorie": "pizzas"
+    },
+    {
+      "id": "p6",
+      "nom": "Pasta Carbonara",
+      "description": "Pâtes fraîches, œufs, pancetta, parmesan",
+      "prix": 14,
+      "categorie": "pates"
+    },
+    {
+      "id": "p7",
+      "nom": "Pasta Pesto",
+      "description": "Pesto basilic, parmesan",
+      "prix": 13,
+      "categorie": "pates"
+    },
+    {
+      "id": "p8",
+      "nom": "Tiramisu",
+      "description": "Mascarpone, café, cacao",
+      "prix": 7,
+      "categorie": "desserts"
+    },
+    {
+      "id": "p9",
+      "nom": "Panna Cotta",
+      "description": "Vanille, coulis fruits rouges",
+      "prix": 6,
+      "categorie": "desserts"
+    },
+    {
+      "id": "p10",
+      "nom": "Cannoli Siciliens",
+      "description": "Crème ricotta",
+      "prix": 8,
+      "categorie": "desserts"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inscription</title>
+        <link rel="stylesheet" href="style.css">
+
+     </head>
+
+    <body class="page-inscription">
+        <nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">Bella Ciao</div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="menu.html">Menu</a>
+            <a href="notation.html">Notation</a>
+            <a href="connexion.html">Se connecter</a>
+            <a href="inscription.html">S'inscrire</a>
+           
+            <div class="dropdown">
+                <a href="" class="nav-links">Profil ⏷</a>
+                <div class="dropdown-content">
+                    <a href="info.html">Mes informations</a>
+                    <a href="commandes.html">Mes commandes</a>
+                    <a href="compte+.html">Mon compte Bella Ciao +</a>
+                </div>
+             </div>
+
+        </div>
+    </div>
+</nav>
+
+
+        <div class="form-wrapper">
+            
+    <div class="nomrestaurant" id="entete-blanc">
+
+           Bella Ciao
+            </div><br><br>
+     
+        <div class="ligne">
+        	<div class="sousligne">
+                <form action="" method="post"><label for="Nom" >Nom</label><br>
+                <input type="text" id="Nom" name="Nom"required ><br><br>
+            </div>
+
+          	<div class="sousligne">
+                <label for="Prenom">Prenom</label><br>
+                <input type="text" id="Prenom" name="Prenom" required><br><br>
+            </div> 
+       
+      	</div>
+
+        <div class="ligne">
+            <div class="sousligne">
+                <label for="Email">Email</label><br>
+                <input type="email" id="Email" name="Email" required><br><br>
+            </div>
+            
+            <div class="sousligne">
+                <label for="Tel">Téléphone</label><br>
+                <input type="tel" id="Tel" name="Téléphone" pattern="(?=.*[A-Z]).{8,}" required><br><br>
+            </div>
+      </div>
+      <div class="ligne">
+    <div class="sousligne">
+        <label for="Mdp">Mot de passe</label><br>
+        <input type="password" id="Mdp" name="password" minlength="8" required placeholder="8 caractères minimum avec au moins 1 majuscule"><br><br>
+    </div>
+</div>
+        <div class="ligne">
+            <div>
+                <label for="Numpost">Code postal</label><br>
+                <input type="text" name="Code postal" maxlength="5" required><br><br>
+            </div>
+            
+            <div class="sousligne">
+                <label for="Livraison">Adresse de livraison</label><br>
+                <input type="text" name="Adresse de livraison" required><br><br>
+            </div>
+        
+        </div>
+       
+
+        <div class="sousligne">
+            <label for="Supp">Eléments suplémentaires que vous souhaitez rajouter ?</label>
+            <textarea></textarea>
+        </div>
+
+        <div class="send">
+           <button type="submit" class="btn">Envoyer</button>
+        </div>
+
+        <br>
+        
+         <div class="nav-links">
+            <span>Si vous avez déjà un compte, veuillez cliquer juste ici   ➤ </span>
+             <a href="connexion.html">Se connecter</a>
+         </div>
+       
+       </form>
+    </div>
+
+   
+
+    
+<footer>
+    <p>© 2026 Bella Ciao - Tous droits réservés</p>
+</footer>
+
+        
+          
+    </body>
+   
+</html>
