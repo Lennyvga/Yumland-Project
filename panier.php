@@ -2,7 +2,7 @@
 session_start();
 
 
-$json = file_get_contents("data/plats.json");
+$json = file_get_contents("plats.json");
 $data = json_decode($json, true);
 $plats_du_json = $data['plats'];
 
