@@ -92,7 +92,7 @@
 
 <div class="price">14€</div>
 
-<a href="#" class="btn">Commander</a>
+<a href="menu.php" class="btn">Commander</a>
 
 </div>
 
