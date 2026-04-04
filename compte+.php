@@ -35,7 +35,7 @@
 
 <div class="form-wrapper header-premium">
     <h1 class="nomrestaurant">Bella Ciao <span class="plus-symbol">+</span></h1>
-    <p>Devenez un membre VIP et profitez de la Dolce Vita en illimité.</p>
+    <p>Devenez un membre VIP et profitez de la Dolce Vita en illimité!</p>
     
     <br>
     <div class="status-box">
