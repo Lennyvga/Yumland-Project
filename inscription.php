@@ -4,7 +4,7 @@
         <title>Inscription</title>
         <link rel="stylesheet" href="style.css">
 
-     </head>
+    </head>
 
     <body class="page-inscription">
         <nav class="navbar">
