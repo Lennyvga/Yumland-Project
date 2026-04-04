@@ -25,7 +25,7 @@
     </nav>
 
     <div class="container">
-        <h1 class="section-title">Historique de mes commandes</h1>
+        <h1 class="section-title">Historique de mes commandes:</h1>
 
         <div class="orders-container">
             <div class="order-column">
