@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Inscription</title>
-        <link rel="stylesheet" href="style.css">
 
-    </head>
+<head>
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css">
 
-    <body class="page-inscription">
-        <nav class="navbar">
-    <div class="container nav-content">
-        <div class="logo">Bella Ciao</div>
-        <div class="nav-links">
-            <a href="index.php">Accueil</a>
-            <a href="menu.php">Menu</a>
-            <a href="notation.php">Notation</a>
-            <a href="connexion.php">Se connecter</a>
-            <a href="inscription.php">S'inscrire</a>
-           
-            <div class="dropdown">
-                <a href="" class="nav-links">Profil ⏷</a>
-                <div class="dropdown-content">
-                    <a href="informations.php">Mes informations</a>
-                    <a href="commandes.php">Mes commandes</a>
-                    <a href="compte+.php">Mon compte Bella Ciao +</a>
+</head>
+
+<body class="page-inscription">
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Bella Ciao</div>
+            <div class="nav-links">
+                <a href="index.php">Accueil</a>
+                <a href="menu.php">Menu</a>
+                <a href="notation.php">Notation</a>
+                <a href="connexion.php">Se connecter</a>
+                <a href="inscription.php">S'inscrire</a>
+
+                <div class="dropdown">
+                    <a href="" class="nav-links">Profil ⏷</a>
+                    <div class="dropdown-content">
+                        <a href="informations.php">Mes informations</a>
+                        <a href="commandes.php">Mes commandes</a>
+                        <a href="compte+.php">Mon compte Bella Ciao +</a>
+                    </div>
                 </div>
-             </div>
 
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
-        <div class="form-wrapper">
-            
-    <div class="nomrestaurant" id="entete-blanc">
+    <div class="form-wrapper">
 
-           Bella Ciao
-            </div><br><br>
-     
+        <div class="nomrestaurant" id="entete-blanc">
+
+            Bella Ciao
+        </div><br><br>
+
         <div class="ligne">
-        	<div class="sousligne">
-                <form action="" method="post"><label for="Nom" >Nom</label><br>
-                <input type="text" id="Nom" name="Nom"required ><br><br>
+            <div class="sousligne">
+                <form action="traitement_inscription.php" method="post">
+                    <label for="Nom">Nom</label><br>
+                    <input type="text" id="Nom" name="Nom" required><br><br>
             </div>
 
-          	<div class="sousligne">
+            <div class="sousligne">
                 <label for="Prenom">Prenom</label><br>
                 <input type="text" id="Prenom" name="Prenom" required><br><br>
-            </div> 
-       
-      	</div>
+            </div>
+
+        </div>
 
         <div class="ligne">
             <div class="sousligne">
                 <label for="Email">Email</label><br>
                 <input type="email" id="Email" name="Email" required><br><br>
             </div>
-            
+
             <div class="sousligne">
                 <label for="Tel">Téléphone</label><br>
-                <input type="tel" id="Tel" name="Téléphone" pattern="[0-9]{10}" placeholder="0612345678" " required><br><br>
+                <input type="tel" id="Tel" name="Téléphone" pattern="[0-9]{10}" placeholder="0612345678"
+                    required><br><br>
             </div>
-      </div>
-      <div class="ligne">
-    <div class="sousligne">
-        <label for="Mdp">Mot de passe</label><br>
-        <input type="password" id="Mdp" name="password" minlength="8" required placeholder="8 caractères minimum avec au moins 1 majuscule"><br><br>
-    </div>
-</div>
+        </div>
+        <div class="ligne">
+            <div class="sousligne">
+                <label for="Mdp">Mot de passe</label><br>
+                <input type="password" id="Mdp" name="password" minlength="8" required
+                    placeholder="8 caractères minimum avec au moins 1 majuscule"><br><br>
+            </div>
+        </div>
         <div class="ligne">
             <div>
                 <label for="Numpost">Code postal</label><br>
                 <input type="text" name="Code postal" maxlength="5" required><br><br>
             </div>
-            
+
             <div class="sousligne">
                 <label for="Livraison">Adresse de livraison</label><br>
                 <input type="text" name="Adresse de livraison" required><br><br>
             </div>
-        
+
         </div>
-       
+
 
         <div class="sousligne">
             <label for="Supp">Eléments suplémentaires que vous souhaitez rajouter ?</label>
@@ -88,28 +92,28 @@
         </div>
 
         <div class="send">
-           <button type="submit" class="btn">Envoyer</button>
+            <button type="submit" class="btn">Envoyer</button>
         </div>
 
         <br>
-        
-         <div class="nav-links">
-            <span>Si vous avez déjà un compte, veuillez cliquer juste ici   ➤ </span>
-             <a href="connexion.php">Se connecter</a>
-         </div>
-       
-       </form>
+
+        <div class="nav-links">
+            <span>Si vous avez déjà un compte, veuillez cliquer juste ici ➤ </span>
+            <a href="connexion.php">Se connecter</a>
+        </div>
+
+        </form>
     </div>
 
-   
 
-    
-<footer>
-    <p>© 2026 Bella Ciao - Tous droits réservés</p>
-</footer>
 
-        
-          
-    </body>
-   
+
+    <footer>
+        <p>© 2026 Bella Ciao - Tous droits réservés</p>
+    </footer>
+
+
+
+</body>
+
 </html>
