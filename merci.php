@@ -36,7 +36,7 @@
 
         <p>
             Merci d’avoir laissé un avis chez <b>Bella Ciao</b>.  
-            Votre opinion nous aide à nous améliorer chaque jour ❤️
+            Votre opinion nous aide à nous améliorer chaque jour! ❤️
         </p>
 
         <a href="index.html" class="btn">Retour à l’accueil</a>
