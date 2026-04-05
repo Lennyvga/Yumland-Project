@@ -5,7 +5,7 @@ session_start();
 $nom = $_POST['Nom'];
 $prenom = $_POST['Prenom'];
 $email = $_POST['Email'];
-$telephone = $_POST['telephone'];
+$telephone = $_POST['Téléphone'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $code_postal = $_POST['code_postal'];
 $adresse = $_POST['adresse'];
