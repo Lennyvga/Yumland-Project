@@ -90,6 +90,31 @@
             "role": "admin",
             "statut": "actif",
             "date_inscription": "2026-01-01"
+        },   {
+            "id": "u8",
+            "nom": "Rossi",
+            "prenom": "Marco",
+            "email": "marco.rossi@bellaciao.fr",
+            "password": "$2y$10$qgdhYEBI80duV/X3J387uet.X64g.T116ZGrq76n/UxhKTQri1bzC",
+            "telephone": "0600000003",
+            "adresse": "10 rue Bella Ciao, 75002 Paris",
+            "code_postal": "75002",
+            "role": "restaurateur",
+            "statut": "actif",
+            "date_inscription": "2026-01-01"
+        },
+        {
+            "id": "u9",
+            "nom": "Moreau",
+            "prenom": "Karim",
+            "email": "karim.moreau@bellaciao.fr",
+            "password": "$2y$10$qgdhYEBI80duV/X3J387uet.X64g.T116ZGrq76n/UxhKTQri1bzC",
+            "telephone": "0600000004",
+            "adresse": "20 rue du Livreur, 75003 Paris",
+            "code_postal": "75003",
+            "role": "livreur",
+            "statut": "actif",
+            "date_inscription": "2026-01-01"
         }
     ]
 }
