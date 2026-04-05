@@ -12,14 +12,13 @@ $action = $_POST['action'];
 $json = file_get_contents(__DIR__ . "/utilisateurs.json");
 $data = json_decode($json, true);
 
+
 foreach ($data['utilisateurs'] as &$utilisateur) {
     if ($utilisateur['id'] == $id) {
         if ($action == 'bloquer') {
-            if ($utilisateur['statut'] == 'actif') {
-                $utilisateur['statut'] = 'bloque';
-            } else {
-                $utilisateur['statut'] = 'actif';
-            }
+            $utilisateur['statut'] = 'bloque';
+        } else if ($action == 'debloquer') {
+            $utilisateur['statut'] = 'actif';       
         } else if ($action == 'desactiver') {
             $utilisateur['statut'] = 'desactive';
         }
