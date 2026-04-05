@@ -3,6 +3,16 @@ session_start();
 $json = file_get_contents("plats.json");
 $data = json_decode($json, true);
 $plats = $data['plats'];
+
+$json_menus = file_get_contents("menus.json");
+$data_menus = json_decode($json_menus, true);
+$menus = $data_menus['menus'];
+
+$plats_par_id = [];
+foreach ($plats as $plat) {
+    $plats_par_id[$plat['id']] = $plat;
+} 
+
 $categorie_active = isset($_GET['categorie']) ? $_GET['categorie'] : 'tous';
 $recherche = isset($_GET['recherche']) ? strtolower(trim($_GET['recherche'])) : '';
 
@@ -72,10 +82,33 @@ $plats = $plats_temp;
             </div>
         </div>
     </nav>
-
-
     <section class="menu">
         <div class="container">
+            <h2 class="section-title">Nos Menus</h2>
+            <div class="cards">
+                <?php foreach($menus as $menu) { ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title"><?php echo htmlspecialchars($menu['nom']); ?></h3>
+                        <p><?php echo htmlspecialchars($menu['description']); ?></p>
+                        <p><strong>Pour :</strong> <?php echo $menu['nombre_personnes_min']; ?> personne(s) minimum</p>
+                        <p><strong>Disponible :</strong> <?php echo implode(', ', $menu['disponible_le']); ?></p>
+                        <p><strong>Créneaux :</strong> <?php echo implode(' • ', $menu['creneaux']); ?></p>
+                        <p><strong>Plats inclus :</strong></p>
+                        <ul>
+                            <?php foreach($menu['plats'] as $id_plat) { ?>
+                            <?php if (isset($plats_par_id[$id_plat])) { ?>
+                            <li><?php echo htmlspecialchars($plats_par_id[$id_plat]['nom']); ?> —
+                                <?php echo $plats_par_id[$id_plat]['prix']; ?>€</li>
+                            <?php } ?>
+                            <?php } ?>
+                        </ul>
+                        <div class="price"><?php echo $menu['prix_total']; ?>€</div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+
             <h2 class="section-title">Notre Carte</h2>
             <form method="GET" action="menu.php" class="search">
                 <input type="hidden" name="categorie" value="<?php echo htmlspecialchars($categorie_active); ?>">
