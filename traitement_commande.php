@@ -62,6 +62,6 @@ file_put_contents("commandes.json", json_encode($data_commandes, JSON_PRETTY_PRI
 $_SESSION['commande_id'] = $commande['id'];
 
 
-header('Location: merci.php');
+header('Location: paiement.php');
 exit();
 ?>
