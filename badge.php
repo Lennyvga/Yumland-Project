@@ -1,15 +1,12 @@
 <?php
-session_start(); 
+session_start();
 
-$email = $_POST['Email'];
-$mdp= $_POST['Mdp'];
-
-    $_SESSION['auth'] = array(
-        'Email' => $email,
-        'Mdp' => $mdp,
-    );
-
-    header("Location: panier.php");
+if (!isset($_SESSION['auth']) || $_SESSION['auth']['role'] != 'admin') {
+    header('Location: index.php');
     exit();
+}
 
+// Fonctionnalité disponible en phase 3
+header('Location: admin.php');
+exit();
 ?>
