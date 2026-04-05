@@ -12,9 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($utilisateur['email'] == $email && password_verify($password, $utilisateur['password'])) {
           //connexion reussi  
         $_SESSION['auth'] = $utilisateur;
-            header('Location: index.php');
-            exit();
-        }
+          if ($utilisateur['role'] == 'admin') {
+    header('Location: admin.php');
+} else if ($utilisateur['role'] == 'restaurateur') {
+    header('Location: restaurateur.php');
+} else if ($utilisateur['role'] == 'livreur') {
+    header('Location: livreur.php');
+} else {
+    header('Location: index.php');
+}
+exit();
     }
 
     $erreur = "Email ou mot de passe incorrect";
