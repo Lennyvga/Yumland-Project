@@ -1,0 +1,34 @@
+{
+  "menus": [
+    {
+      "id": "m1",
+      "nom": "Menu Midi Express",
+      "description": "Un plat + un dessert au choix, idéal pour la pause déjeuner",
+      "prix_total": 16,
+      "plats": ["p6", "p7", "p8", "p9"],
+      "nombre_personnes_min": 1,
+      "creneaux": ["11:30", "12:00", "12:30", "13:00", "13:30"],
+      "disponible_le": ["lundi", "mardi", "mercredi", "jeudi", "vendredi"]
+    },
+    {
+      "id": "m2",
+      "nom": "Menu Familia",
+      "description": "Entrée + pizza au choix + dessert pour toute la famille",
+      "prix_total": 38,
+      "plats": ["p11", "p12", "p1", "p2", "p3", "p4", "p5", "p8", "p10"],
+      "nombre_personnes_min": 2,
+      "creneaux": ["12:00", "13:00", "19:00", "20:00", "21:00"],
+      "disponible_le": ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+    },
+    {
+      "id": "m3",
+      "nom": "Menu Végétarien",
+      "description": "Entrée + plat végétarien + dessert, 100% sans viande",
+      "prix_total": 22,
+      "plats": ["p12", "p13", "p4", "p7", "p9"],
+      "nombre_personnes_min": 1,
+      "creneaux": ["12:00", "13:00", "19:00", "20:00", "21:00"],
+      "disponible_le": ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+    }
+  ]
+}
