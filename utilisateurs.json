@@ -1,0 +1,95 @@
+{
+    "utilisateurs: "[
+        {
+            "id": "u1",
+            "nom": "Dupont",
+            "prenom": "Jean",
+            "email": "jean.dupont@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0612345678",
+            "adresse": "12 rue de Paris, 75001 Paris",
+            "code_postal": "75001",
+            "role": "client",
+            "statut": "actif",
+            "date_inscription": "2026-01-15"
+        },
+        {
+            "id": "u2",
+            "nom": "Martin",
+            "prenom": "Sophie",
+            "email": "sophie.martin@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0698765432",
+            "adresse": "5 avenue Victor Hugo, 75016 Paris",
+            "code_postal": "75016",
+            "role": "client",
+            "statut": "actif",
+            "date_inscription": "2026-01-20"
+        },
+        {
+            "id": "u3",
+            "nom": "Bernard",
+            "prenom": "Lucas",
+            "email": "lucas.bernard@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0623456789",
+            "adresse": "8 rue de Lyon, 69001 Lyon",
+            "code_postal": "69001",
+            "role": "client",
+            "statut": "actif",
+            "date_inscription": "2026-02-01"
+        },
+        {
+            "id": "u4",
+            "nom": "Petit",
+            "prenom": "Emma",
+            "email": "emma.petit@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0645678901",
+            "adresse": "3 rue de la Paix, 06000 Nice",
+            "code_postal": "06000",
+            "role": "client",
+            "statut": "actif",
+            "date_inscription": "2026-02-10"
+        },
+        {
+            "id": "u5",
+            "nom": "Leroy",
+            "prenom": "Thomas",
+            "email": "thomas.leroy@gmail.com",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0656789012",
+            "adresse": "15 rue du Commerce, 33000 Bordeaux",
+            "code_postal": "33000",
+            "role": "client",
+            "statut": "actif",
+            "date_inscription": "2026-02-15"
+        },
+        {
+            "id": "u6",
+            "nom": "Admin",
+            "prenom": "Pierre",
+            "email": "admin@bellaciao.fr",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0600000001",
+            "adresse": "1 rue Admin, 75000 Paris",
+            "code_postal": "75000",
+            "role": "admin",
+            "statut": "actif",
+            "date_inscription": "2026-01-01"
+        },
+        {
+            "id": "u7",
+            "nom": "Admin",
+            "prenom": "Marie",
+            "email": "marie.admin@bellaciao.fr",
+            "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+            "telephone": "0600000002",
+            "adresse": "2 rue Admin, 75000 Paris",
+            "code_postal": "75000",
+            "role": "admin",
+            "statut": "actif",
+            "date_inscription": "2026-01-01"
+        }
+    ]
+}
