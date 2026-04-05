@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html>
@@ -63,9 +60,6 @@ session_start();
            <br><br> <span>Si vous n'avez pas de compte, veuillez cliquer juste ici   ➤ </span>
              <a href="inscription.php">S'inscrire</a>
 
-            <?php if (isset($_SESSION['auth'])){ ?>
-                <a href="deconnexion.php" class="btn-danger">Se déconnecter</a>
-            <?php } ?>
          </div>
        
 
