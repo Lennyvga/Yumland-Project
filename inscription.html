@@ -1,6 +1,10 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <title>Inscription</title>
         <link rel="stylesheet" href="style.css">
 
@@ -11,18 +15,18 @@
     <div class="container nav-content">
         <div class="logo">Bella Ciao</div>
         <div class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="menu.html">Menu</a>
-            <a href="notation.html">Notation</a>
-            <a href="connexion.html">Se connecter</a>
-            <a href="inscription.html">S'inscrire</a>
+            <a href="index.php">Accueil</a>
+            <a href="menu.php">Menu</a>
+            <a href="notation.php">Notation</a>
+            <a href="connexion.php">Se connecter</a>
+            <a href="inscription.php">S'inscrire</a>
            
             <div class="dropdown">
                 <a href="" class="nav-links">Profil ⏷</a>
                 <div class="dropdown-content">
-                    <a href="info.html">Mes informations</a>
-                    <a href="commandes.html">Mes commandes</a>
-                    <a href="compte+.html">Mon compte Bella Ciao +</a>
+                    <a href="informations.php">Mes informations</a>
+                    <a href="commandes.php">Mes commandes</a>
+                    <a href="compte+.php">Mon compte Bella Ciao +</a>
                 </div>
              </div>
 
@@ -40,7 +44,7 @@
      
         <div class="ligne">
         	<div class="sousligne">
-                <form action="" method="post"><label for="Nom" >Nom</label><br>
+                <form action="badge.php" method="post"><label for="Nom" >Nom</label><br>
                 <input type="text" id="Nom" name="Nom"required ><br><br>
             </div>
 
@@ -59,7 +63,7 @@
             
             <div class="sousligne">
                 <label for="Tel">Téléphone</label><br>
-                <input type="tel" id="Tel" name="Téléphone" pattern="[0-9]{10}" placeholder="0612345678" " required><br><br>
+                <input type="tel" id="Tel" name="Téléphone" pattern="(?=.*[0-9]).{8,}" required><br><br>
             </div>
       </div>
       <div class="ligne">
@@ -95,10 +99,30 @@
         
          <div class="nav-links">
             <span>Si vous avez déjà un compte, veuillez cliquer juste ici   ➤ </span>
-             <a href="connexion.html">Se connecter</a>
+             <a href="connexion.php">Se connecter</a>
          </div>
+
+        <?php /*
+
+
+            // ... Code d'inscription (vérification mdp, enregistrement fichier) ...
+
+            // Une fois l'inscription réussie :
+            if (isset($_POST['provenance']) && $_POST['provenance'] == 'panier') {
+                // Si la provenance est bien "panier", on y retourne
+                header("Location: panier.php");
+            } else {
+                // Sinon, on va à l'accueil par défaut
+                header("Location: index.php");
+            }
+            exit();
+           */
+        ?>
        
        </form>
+
+      
+
     </div>
 
    
