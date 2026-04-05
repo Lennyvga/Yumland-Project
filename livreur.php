@@ -14,6 +14,17 @@ $data = json_decode($json, true);
     <title>Bella Ciao - Livreur</title>
 </head>
 <body>
+    <nav class="navbar" style="background: #333; padding: 10px 0; margin-bottom: 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo" style="color: white; font-weight: bold;">Bella Ciao Livraison</div>
+            <div class="nav-links">
+                <a href="index.php" style="color: white; text-decoration: none; border: 1px solid white; padding: 5px 10px; border-radius: 5px;">🏠 Accueil</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="logo">Bella Ciao Livraison</h1>
     <div class="container">
         <h1 class="logo">Bella Ciao Livraison</h1>
         
