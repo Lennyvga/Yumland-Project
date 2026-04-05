@@ -157,12 +157,12 @@
     },
     {
       "id": "p14",
-      "nom": "Eau Minérale",
-      "description": "50cl, plate ou gazeuse",
+      "nom": "Mojito",
+      "description": "25cl",
       "prix": 2,
       "categorie": "boissons",
       "allergenes": [],
-      "image": "eau.jpg"
+      "image": "mojito.jpg"
     },
     {
       "id": "p15",
