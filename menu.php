@@ -3,6 +3,18 @@ session_start();
 $json = file_get_contents("plats.json");
 $data = json_decode($json, true);
 $plats = $data['plats'];
+$categorie_active = isset($_GET['categorie']) ? $_GET['categorie'] : 'tous';
+$recherche = isset($_GET['recherche']) ? strtolower(trim($_GET['recherche'])) : '';
+
+$plats_temp = [];
+foreach ($plats as $plat) {
+    $match_categorie = ($categorie_active === 'tous' || $plat['categorie'] === $categorie_active);
+    $match_recherche = ($recherche === '' || strpos(strtolower($plat['nom']), $recherche) !== false || strpos(strtolower($plat['description']), $recherche) !== false);
+    if ($match_categorie && $match_recherche) {
+        $plats_temp[] = $plat;
+    }
+}
+$plats = $plats_temp;
 ?>
 
 
@@ -65,22 +77,28 @@ $plats = $data['plats'];
     <section class="menu">
         <div class="container">
             <h2 class="section-title">Notre Carte</h2>
-
-
-            <div class="search">
-                <input type="text" placeholder="Rechercher un plat...">
-                <button class="btn">Rechercher</button>
-            </div>
+            <form method="GET" action="menu.php" class="search">
+                <input type="hidden" name="categorie" value="<?php echo htmlspecialchars($categorie_active); ?>">
+                <input type="text" name="recherche" placeholder="Rechercher un plat..."
+                    value="<?php echo htmlspecialchars($recherche); ?>">
+                <button type="submit" class="btn">Rechercher</button>
+            </form>
 
 
             <div class="filters">
-                <button class="filter-btn">Tous</button>
-                <button class="filter-btn">Pizzas</button>
-                <button class="filter-btn">Pâtes</button>
-                <button class="filter-btn">Desserts</button>
-                <button class="filter-btn">Allergènes</button>
+                <a href="menu.php?categorie=tous&recherche=<?php echo urlencode($recherche); ?>"
+                    class="filter-btn <?php echo $categorie_active === 'tous' ? 'active' : ''; ?>">Tous</a>
+                <a href="menu.php?categorie=entrees&recherche=<?php echo urlencode($recherche); ?>"
+                    class="filter-btn <?php echo $categorie_active === 'entrees' ? 'active' : ''; ?>">Entrées</a>
+                <a href="menu.php?categorie=pizzas&recherche=<?php echo urlencode($recherche); ?>"
+                    class="filter-btn <?php echo $categorie_active === 'pizzas' ? 'active' : ''; ?>">Pizzas</a>
+                <a href="menu.php?categorie=pates&recherche=<?php echo urlencode($recherche); ?>"
+                    class="filter-btn <?php echo $categorie_active === 'pates' ? 'active' : ''; ?>">Pâtes</a>
+                <a href="menu.php?categorie=desserts&recherche=<?php echo urlencode($recherche); ?>"
+                    class="filter-btn <?php echo $categorie_active === 'desserts' ? 'active' : ''; ?>">Desserts</a>
+                <a href="menu.php?categorie=boissons&recherche=<?php echo urlencode($recherche); ?>"
+                    class="filter-btn <?php echo $categorie_active === 'boissons' ? 'active' : ''; ?>">Boissons</a>
             </div>
-
 
 
             <div class="cards">
@@ -92,6 +110,18 @@ $plats = $data['plats'];
                         <div class="card-body">
                             <h3 class="card-title"><?php echo $plat['nom']; ?></h3>
                             <p><?php echo $plat['description']; ?></p>
+                            <?php if (!empty($plat['allergenes'])): ?>
+                            <div class="allergenes">
+                                <span class="allergenes-label">⚠️ Allergènes :</span>
+                                <?php foreach($plat['allergenes'] as $allergene): ?>
+                                <span class="allergene-tag"><?php echo ucfirst($allergene); ?></span>
+                                <?php endforeach; ?>
+                            </div>
+                            <?php else: ?>
+                            <div class="allergenes">
+                                <span class="allergenes-label">✅ Sans allergènes</span>
+                            </div>
+                            <?php endif; ?>
                             <div class="price"><?php echo $plat['prix']; ?>€</div>
                             <form method="POST" action="ajouter.php">
                                 <input type="hidden" name="id_produit" value="<?php echo $plat['id']; ?>">
@@ -100,7 +130,9 @@ $plats = $data['plats'];
                         </div>
                     </div>
                     <?php endforeach; ?>
-
+                    <?php if (empty($plats)): ?>
+                    <p>Aucun plat trouvé.</p>
+                    <?php endif; ?>
                 </div>
 
 
