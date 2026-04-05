@@ -61,7 +61,7 @@
             "telephone": "0656789012",
             "adresse": "15 rue du Commerce, 33000 Bordeaux",
             "code_postal": "33000",
-            "role": "client",
+            "role": "livreur",
             "statut": "actif",
             "date_inscription": "2026-02-15"
         },
