@@ -80,7 +80,7 @@
 
             <div class="sousligne">
                 <label for="Livraison">Adresse de livraison</label><br>
-                <input type="text" name="Adresse de livraison" required><br><br>
+                <input type="text" name="adresse" required><br><br>
             </div>
 
         </div>
