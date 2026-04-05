@@ -23,8 +23,7 @@ $data = json_decode($json, true);
         </div>
     </nav>
 
-    <div class="container">
-        <h1 class="logo">Bella Ciao Livraison</h1>
+    
     <div class="container">
         <h1 class="logo">Bella Ciao Livraison</h1>
         
