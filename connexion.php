@@ -20,9 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location: livreur.php');
 } else {
     header('Location: index.php');
-}
+
 exit();
     }
+        }
 
     $erreur = "Email ou mot de passe incorrect";
 }
