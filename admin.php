@@ -1,23 +1,10 @@
-<?php
-session_start();
-
-
-if (!isset($_SESSION['auth']) || $_SESSION['auth']['role'] != 'admin') {
-    header('Location: index.php');
-    exit();
-}
-
-
-$json = file_get_contents(__DIR__ . "/utilisateurs.json");
-$data = json_decode($json, true);
-$utilisateurs = $data['utilisateurs'];
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <title>Administration - Bella Ciao</title>
+    <title>Bella Ciao Ristorante</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,76 +14,125 @@ $utilisateurs = $data['utilisateurs'];
             <div class="logo">Bella Ciao</div>
             <div class="nav-links">
                 <a href="index.php">Accueil</a>
+                <a href="menu.php">Menu</a>
+
+                <?php if (isset($_SESSION['auth'])) { ?>
+
+                <?php if ($_SESSION['auth']['role'] === 'admin') { ?>
                 <a href="admin.php">Administration</a>
+                <?php } ?>
+
+                <?php if ($_SESSION['auth']['role'] === 'restaurateur') { ?>
+                <a href="restaurateur.php">Commandes</a>
+                <?php } ?>
+
+                <?php if ($_SESSION['auth']['role'] === 'livreur') { ?>
+                <a href="livreur.php">Ma livraison</a>
+                <?php } ?>
+
+                <?php if ($_SESSION['auth']['role'] === 'client') { ?>
+                <a href="notation.php">Notation</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-links">Profil ⏷</a>
+                    <div class="dropdown-content">
+                        <a href="informations.php">Mes informations</a>
+                        <a href="commandes.php">Mes commandes</a>
+                        <a href="compte+.php">Mon compte Bella Ciao +</a>
+                    </div>
+                </div>
+                <?php } ?>
+
                 <a href="deconnexion.php">Se déconnecter</a>
+
+                <?php } else { ?>
+                <a href="connexion.php">Se connecter</a>
+                <a href="inscription.php">S'inscrire</a>
+                <?php } ?>
+
             </div>
         </div>
     </nav>
 
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-overlay">
+
+                <h1>Authentique cuisine italienne</h1>
+
+                <p>Des plats faits maison avec passion</p>
+
+            </div>
+        </div>
+    </section>
+
+
+
     <div class="container">
-        <h2 class="section-title">Liste des utilisateurs</h2>
 
-        <table class="panier-table">
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
-                <th>Rôle</th>
-                <th>Statut</th>
-                <th>Inscription</th>
-                <th>Actions</th>
-            </tr>
+        <div class="search">
 
-            <?php
-            foreach ($utilisateurs as $utilisateur) {
-                echo '<tr>';
-                echo '<td>' . $utilisateur['nom'] . '</td>';
-                echo '<td>' . $utilisateur['prenom'] . '</td>';
-                echo '<td>' . $utilisateur['email'] . '</td>';
-                echo '<td>' . $utilisateur['role'] . '</td>';
-                echo '<td>' . $utilisateur['statut'] . '</td>';
-                echo '<td>' . $utilisateur['date_inscription'] . '</td>';
-                echo '<td>';
-                echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
-                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                echo '<input type="hidden" name="action" value="bloquer">';
-                if ($utilisateur['statut'] == 'bloque') {
-                    echo '<button type="submit" class="btn">Débloquer</button>';
-                } else {
-                    echo '<button type="submit" class="btn">Bloquer</button>';
-                }
-                echo '</form>';
-// Bouton Désactive
-                 echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
-                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                echo '<input type="hidden" name="action" value="desactiver">';
-                echo '<button type="submit" class="btn">Désactiver</button>';
-                echo '</form>';
-                // Bouton Statut compte +
-                echo '<form method="POST" style="display:inline;">';
-                echo '<select name="statut_premium">';
-                echo '<option value="normal">Normal</option>';
-                echo '<option value="premium">Premium</option>';
-                echo '<option value="vip">compte+</option>';
-                echo '</select>';
-                echo '<button type="submit" class="btn" disabled>Modifier statut</button>';
-                echo '</form>';
-                // Bouton Remise
-                echo '<form method="POST" style="display:inline;">';
-                echo '<input type="number" name="remise" placeholder="Remise %" min="0" max="100">';
-                echo '<button type="submit" class="btn" disabled>Accorder remise</button>';
-                echo '</form>';
+            <input type="text" placeholder="Rechercher un plat...">
 
-                echo '</td>';
-                echo '</tr>';
-            }
-            ?>
-        </table>
+            <button class="btn">Rechercher</button>
+
+        </div>
+
     </div>
 
-    <footer>
-        <p>© 2026 Bella Ciao - Tous droits réservés</p>
+
+    <div class="container">
+
+        <h2 class="section-title">Nos spécialités</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="images/pizza-margherita.jpg">
+                <div class="card-body">
+                    <div class="card-title">Pizza Margherita</div>
+                    <div class="price">12€</div>
+                    <form method="POST" action="ajouter.php">
+                        <input type="hidden" name="id_produit" value="p1">
+                        <button type="submit" class="btn">Commander</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/pasta.jpg">
+                <div class="card-body">
+                    <div class="card-title">Pasta Carbonara</div>
+                    <div class="price">14€</div>
+                    <form method="POST" action="ajouter.php">
+                        <input type="hidden" name="id_produit" value="p6">
+                        <button type="submit" class="btn">Commander</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/tiramisu.jpg">
+                <div class="card-body">
+                    <div class="card-title">Tiramisu</div>
+                    <div class="price">7€</div>
+                    <form method="POST" action="ajouter.php">
+                        <input type="hidden" name="id_produit" value="p8">
+                        <button type="submit" class="btn">Commander</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer-black">
+
+        Bella Ciao Ristorante © 2026
+
     </footer>
+
 </body>
 
 </html>
