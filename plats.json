@@ -6,6 +6,10 @@
       "description": "Tomate, mozzarella, basilic",
       "prix": 12,
       "categorie": "pizzas",
+      "allergenes": [
+        "gluten",
+        "lait"
+      ],
       "image": "pizza-margherita.jpg"
     },
     {
@@ -14,6 +18,10 @@
       "description": "Mozzarella, gorgonzola, chèvre, parmesan",
       "prix": 15,
       "categorie": "pizzas",
+      "allergenes": [
+        "gluten",
+        "lait"
+      ],
       "image": "pizza-4fromages.jpg"
     },
     {
@@ -22,6 +30,10 @@
       "description": "Tomate, mozzarella, pepperoni",
       "prix": 14,
       "categorie": "pizzas",
+      "allergenes": [
+        "gluten",
+        "lait"
+      ],
       "image": "pizza-pepperoni.jpg"
     },
     {
@@ -30,6 +42,10 @@
       "description": "Légumes grillés, mozzarella",
       "prix": 13,
       "categorie": "pizzas",
+      "allergenes": [
+        "gluten",
+        "lait"
+      ],
       "image": "pizza-vegetarienne.jpg"
     },
     {
@@ -38,6 +54,10 @@
       "description": "Tomate, jambon, champignons",
       "prix": 16,
       "categorie": "pizzas",
+      "allergenes": [
+        "gluten",
+        "lait"
+      ],
       "image": "pizza-calzone.jpg"
     },
     {
@@ -46,6 +66,11 @@
       "description": "Pâtes fraîches, œufs, pancetta, parmesan",
       "prix": 14,
       "categorie": "pates",
+      "allergenes": [
+        "gluten",
+        "lait",
+        "oeufs"
+      ],
       "image": "pasta.jpg"
     },
     {
@@ -54,6 +79,11 @@
       "description": "Pesto basilic, parmesan",
       "prix": 13,
       "categorie": "pates",
+      "allergenes": [
+        "gluten",
+        "lait",
+        "fruits a coque"
+      ],
       "image": "pasta-pesto.jpg"
     },
     {
@@ -62,6 +92,11 @@
       "description": "Mascarpone, café, cacao",
       "prix": 7,
       "categorie": "desserts",
+      "allergenes": [
+        "lait",
+        "oeufs",
+        "gluten"
+      ],
       "image": "tiramisu.jpg"
     },
     {
@@ -70,6 +105,9 @@
       "description": "Vanille, coulis fruits rouges",
       "prix": 6,
       "categorie": "desserts",
+      "allergenes": [
+        "lait"
+      ],
       "image": "pannacotta.jpg"
     },
     {
@@ -78,7 +116,62 @@
       "description": "Crème ricotta",
       "prix": 8,
       "categorie": "desserts",
+      "allergenes": [
+        "lait",
+        "gluten"
+      ],
       "image": "cannoli.jpg"
+    },
+    {
+      "id": "p11",
+      "nom": "Bruschetta",
+      "description": "Pain grillé, tomates fraîches, ail, basilic, huile d'olive",
+      "prix": 6,
+      "categorie": "entrees",
+      "allergenes": [
+        "gluten"
+      ],
+      "image": "bruschetta.jpg"
+    },
+    {
+      "id": "p12",
+      "nom": "Salade Caprese",
+      "description": "Tomates, mozzarella di bufala, basilic frais, huile d'olive",
+      "prix": 9,
+      "categorie": "entrees",
+      "allergenes": [
+        "lait"
+      ],
+      "image": "caprese.jpg"
+    },
+    {
+      "id": "p13",
+      "nom": "Soupe Minestrone",
+      "description": "Légumes de saison, pâtes, bouillon de légumes",
+      "prix": 7,
+      "categorie": "entrees",
+      "allergenes": [
+        "gluten"
+      ],
+      "image": "minestrone.jpg"
+    },
+    {
+      "id": "p14",
+      "nom": "Eau Minérale",
+      "description": "50cl, plate ou gazeuse",
+      "prix": 2,
+      "categorie": "boissons",
+      "allergenes": [],
+      "image": "eau.jpg"
+    },
+    {
+      "id": "p15",
+      "nom": "Limonade Maison",
+      "description": "Citron pressé, menthe fraîche, sucre de canne",
+      "prix": 4,
+      "categorie": "boissons",
+      "allergenes": [],
+      "image": "limonade.jpg"
     }
   ]
 }
