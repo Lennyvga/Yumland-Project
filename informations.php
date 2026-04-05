@@ -1,4 +1,29 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+
+if (!isset($_SESSION['auth'])) {
+    header('Location: connexion.php');
+    exit();
+}
+
+$json_users = file_get_contents("utilisateurs.json");
+$data_users = json_decode($json_users, true);
+
+
+$user = null;
+foreach ($data_users['utilisateurs'] as $u) {
+    if ($u['email'] === $_SESSION['auth']['email']) {
+        $user = $u;
+        break;
+    }
+}
+
+if ($user === null) {
+    header('Location: connexion.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 
 <head>
@@ -58,53 +83,57 @@
         <div class="ligne">
             <div class="sousligne">
                 <label>Nom</label><br>
-                <span>Dupont</span>
-                <span><a href="inscription.php" class="edit-link">✎</a></span>
+                <span><?php echo htmlspecialchars($user['nom']); ?></span>
+                <span><a href="#" class="edit-link">✎</a></span>
             </div>
             <div class="sousligne">
                 <label>Prénom</label><br>
-                <span>Jean</span>
-                <span><a href="inscription.php" class="edit-link">✎</a></span>
+                <span><?php echo htmlspecialchars($user['prenom']); ?></span>
+                <span><a href="#" class="edit-link">✎</a></span>
             </div>
         </div>
 
         <div class="ligne">
             <div class="sousligne">
                 <label>Email</label><br>
-                <span>jean.dupont@email.com</span>
-                <span><a href="inscription.php" class="edit-link">✎</a></span>
+                <span><?php echo htmlspecialchars($user['email']); ?></span>
+                <span><a href="#" class="edit-link">✎</a></span>
             </div>
             <div class="sousligne">
                 <label>Téléphone</label><br>
-                <span>06 01 02 03 04</span>
-                <span><a href="inscription.php" class="edit-link">✎</a></span>
+                <span><?php echo htmlspecialchars($user['telephone']); ?></span>
+                <span><a href="#" class="edit-link">✎</a></span>
             </div>
         </div>
 
         <div class="ligne">
             <div class="sousligne">
                 <label>Code postal</label><br>
-                <span>75001</span>
-                <span><a href="inscription.php" class="edit-link">✎</a></span>
+                <span><?php echo htmlspecialchars($user['code_postal']); ?></span>
+                <span><a href="#" class="edit-link">✎</a></span>
             </div>
             <div class="sousligne">
                 <label>Adresse de livraison</label><br>
-                <span>12 rue de la Paix, Paris</span>
-                <span><a href="inscription.php" class="edit-link">✎</a></span>
+                <span><?php echo htmlspecialchars($user['adresse']); ?></span>
+                <span><a href="#" class="edit-link">✎</a></span>
             </div>
         </div>
 
-        <div class="sousligne">
-            <label>Éléments supplémentaires</label>
-            <span>Pas d'oignons dans la pizza, merci !</span>
-            <span><a href="inscription.php" class="edit-link">✎</a></span>
+        <div class="ligne">
+            <div class="sousligne">
+                <label>Rôle</label><br>
+                <span><?php echo htmlspecialchars(ucfirst($user['role'])); ?></span>
+            </div>
+            <div class="sousligne">
+                <label>Membre depuis</label><br>
+                <span><?php echo htmlspecialchars($user['date_inscription']); ?></span>
+            </div>
+
         </div>
 
-    </div>
-
-    <footer>
-        <p>© 2026 Bella Ciao - Tous droits réservés</p>
-    </footer>
+        <footer>
+            <p>© 2026 Bella Ciao - Tous droits réservés</p>
+        </footer>
 </body>
 
 </html>
