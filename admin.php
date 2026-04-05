@@ -57,6 +57,7 @@ $utilisateurs = $data['utilisateurs'];
                 echo '<td>' . $utilisateur['statut'] . '</td>';
                 echo '<td>' . $utilisateur['date_inscription'] . '</td>';
                 echo '<td>';
+                echo '<a href="informations.php?id=' . $utilisateur['id'] . '" class="btn">Voir profil</a> ';
                 echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
                 echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
                 if ($utilisateur['statut'] == 'bloque') {
