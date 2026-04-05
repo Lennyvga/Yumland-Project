@@ -24,8 +24,7 @@ $donnees_users = json_decode($json_users, true);
         </div>
     </nav>
 
-    <div class="container">
-        <h1 class="logo">Bella Ciao</h1>
+    
     <div class="container">
         <h1 class="logo">Bella Ciao</h1>
         <h2 class="section-title">Commandes à gérer</h2>
