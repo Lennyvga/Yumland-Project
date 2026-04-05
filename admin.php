@@ -1,24 +1,26 @@
 <?php
 session_start();
 
-// Vérifier que l'utilisateur est connecté et est admin
+
 if (!isset($_SESSION['auth']) || $_SESSION['auth']['role'] != 'admin') {
     header('Location: index.php');
     exit();
 }
 
-// Lire le fichier JSON
+
 $json = file_get_contents(__DIR__ . "/utilisateurs.json");
 $data = json_decode($json, true);
 $utilisateurs = $data['utilisateurs'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Administration - Bella Ciao</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container nav-content">
@@ -55,10 +57,36 @@ $utilisateurs = $data['utilisateurs'];
                 echo '<td>' . $utilisateur['statut'] . '</td>';
                 echo '<td>' . $utilisateur['date_inscription'] . '</td>';
                 echo '<td>';
-                echo '<form method="POST" action="bloquer_utilisateur.php">';
+                echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
                 echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                echo '<button type="submit" class="btn">Bloquer</button>';
+                echo '<input type="hidden" name="action" value="bloquer">';
+                if ($utilisateur['statut'] == 'bloque') {
+                    echo '<button type="submit" class="btn">Débloquer</button>';
+                } else {
+                    echo '<button type="submit" class="btn">Bloquer</button>';
+                }
                 echo '</form>';
+// Bouton Désactive
+                 echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
+                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
+                echo '<input type="hidden" name="action" value="desactiver">';
+                echo '<button type="submit" class="btn">Désactiver</button>';
+                echo '</form>';
+                // Bouton Statut compte +
+                echo '<form method="POST" style="display:inline;">';
+                echo '<select name="statut_premium">';
+                echo '<option value="normal">Normal</option>';
+                echo '<option value="premium">Premium</option>';
+                echo '<option value="vip">compte+</option>';
+                echo '</select>';
+                echo '<button type="submit" class="btn" disabled>Modifier statut</button>';
+                echo '</form>';
+                // Bouton Remise
+                echo '<form method="POST" style="display:inline;">';
+                echo '<input type="number" name="remise" placeholder="Remise %" min="0" max="100">';
+                echo '<button type="submit" class="btn" disabled>Accorder remise</button>';
+                echo '</form>';
+
                 echo '</td>';
                 echo '</tr>';
             }
@@ -70,4 +98,5 @@ $utilisateurs = $data['utilisateurs'];
         <p>© 2026 Bella Ciao - Tous droits réservés</p>
     </footer>
 </body>
+
 </html>
