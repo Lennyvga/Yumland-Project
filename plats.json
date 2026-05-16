@@ -6,6 +6,11 @@
       "description": "Tomate, mozzarella, basilic",
       "prix": 12,
       "categorie": "pizzas",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 145,
       "allergenes": [
         "gluten",
         "lait"
@@ -18,6 +23,11 @@
       "description": "Mozzarella, gorgonzola, chèvre, parmesan",
       "prix": 15,
       "categorie": "pizzas",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 98,
       "allergenes": [
         "gluten",
         "lait"
@@ -30,6 +40,9 @@
       "description": "Tomate, mozzarella, pepperoni",
       "prix": 14,
       "categorie": "pizzas",
+      "regime": [],
+      "saveur": "sale",
+      "nb_commandes": 120,
       "allergenes": [
         "gluten",
         "lait"
@@ -42,6 +55,12 @@
       "description": "Légumes grillés, mozzarella",
       "prix": 13,
       "categorie": "pizzas",
+      "regime": [
+        "vegetarien",
+        "vegan"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 75,
       "allergenes": [
         "gluten",
         "lait"
@@ -54,6 +73,9 @@
       "description": "Tomate, jambon, champignons",
       "prix": 16,
       "categorie": "pizzas",
+      "regime": [],
+      "saveur": "sale",
+      "nb_commandes": 60,
       "allergenes": [
         "gluten",
         "lait"
@@ -63,9 +85,12 @@
     {
       "id": "p6",
       "nom": "Pasta Carbonara",
-      "description": "Pâtes fraîches, œufs, pancetta, parmesan",
+      "description": "Pâtes fraîches, oeufs, pancetta, parmesan",
       "prix": 14,
       "categorie": "pates",
+      "regime": [],
+      "saveur": "sale",
+      "nb_commandes": 110,
       "allergenes": [
         "gluten",
         "lait",
@@ -79,6 +104,11 @@
       "description": "Pesto basilic, parmesan",
       "prix": 13,
       "categorie": "pates",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 88,
       "allergenes": [
         "gluten",
         "lait",
@@ -92,6 +122,11 @@
       "description": "Mascarpone, café, cacao",
       "prix": 7,
       "categorie": "desserts",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sucre",
+      "nb_commandes": 135,
       "allergenes": [
         "lait",
         "oeufs",
@@ -105,6 +140,11 @@
       "description": "Vanille, coulis fruits rouges",
       "prix": 6,
       "categorie": "desserts",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sucre",
+      "nb_commandes": 90,
       "allergenes": [
         "lait"
       ],
@@ -116,6 +156,11 @@
       "description": "Crème ricotta",
       "prix": 8,
       "categorie": "desserts",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sucre",
+      "nb_commandes": 70,
       "allergenes": [
         "lait",
         "gluten"
@@ -128,6 +173,12 @@
       "description": "Pain grillé, tomates fraîches, ail, basilic, huile d'olive",
       "prix": 6,
       "categorie": "entrees",
+      "regime": [
+        "vegetarien",
+        "vegan"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 95,
       "allergenes": [
         "gluten"
       ],
@@ -139,6 +190,11 @@
       "description": "Tomates, mozzarella di bufala, basilic frais, huile d'olive",
       "prix": 9,
       "categorie": "entrees",
+      "regime": [
+        "vegetarien"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 80,
       "allergenes": [
         "lait"
       ],
@@ -150,6 +206,12 @@
       "description": "Légumes de saison, pâtes, bouillon de légumes",
       "prix": 7,
       "categorie": "entrees",
+      "regime": [
+        "vegetarien",
+        "vegan"
+      ],
+      "saveur": "sale",
+      "nb_commandes": 55,
       "allergenes": [
         "gluten"
       ],
@@ -161,6 +223,12 @@
       "description": "25cl",
       "prix": 2,
       "categorie": "boissons",
+      "regime": [
+        "vegetarien",
+        "vegan"
+      ],
+      "saveur": "sucre",
+      "nb_commandes": 85,
       "allergenes": [],
       "image": "mojito.jpg"
     },
@@ -170,6 +238,12 @@
       "description": "Citron pressé, menthe fraîche, sucre de canne",
       "prix": 4,
       "categorie": "boissons",
+      "regime": [
+        "vegetarien",
+        "vegan"
+      ],
+      "saveur": "sucre",
+      "nb_commandes": 115,
       "allergenes": [],
       "image": "limonade.jpg"
     }
