@@ -631,4 +631,239 @@ footer {
 
 .valider-commande-background{
     background-color: #27ae60;
+}/* ── Phase 3 : Modifications commandes  ────────────────────────── */
+
+.modifier-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.modifier-col {
+    flex: 1;
+    min-width: 280px;
+}
+
+.modifier-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #CD212A;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.article-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.article-row .article-nom {
+    font-weight: 600;
+}
+
+.article-row .article-prix {
+    color: #008C45;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.qte-ctrl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qte-ctrl button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #CD212A;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.qte-ctrl span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plat-ajout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.total-bar {
+    background: #FFFFFF;
+    border: 2px solid #008C45;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.total-bar .total-montant {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #008C45;
+}
+
+.diff-plus  { color: #CD212A; font-weight: 600; margin-top: 4px; }
+.diff-moins { color: #008C45; font-weight: 600; margin-top: 4px; }
+
+/* ── Phase 3 : Messages flash ──────────────────────────────────── */
+
+.msg-flash {
+    display: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.msg-ok  { background: #d4edda; color: #155724; }
+.msg-err { background: #f8d7da; color: #721c24; }
+
+/* ── Phase 3 : Toast notification ──────────────────────────────── */
+
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/* ── Phase 3 : Commande à noter ────────────────────────────────── */
+
+.commande-a-noter {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.commande-a-noter h3 {
+    font-family: 'Playfair Display', serif;
+    color: #CD212A;
+    margin-bottom: 8px;
+}
+
+.commande-a-noter ul {
+    margin: 10px 0 14px 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.notation-section {
+    max-width: 660px;
+    margin: 40px auto;
+}
+
+/* ── Phase 3 : Restaurateur kanban ─────────────────────────────── */
+
+.kanban {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.kanban-col {
+    flex: 1;
+    min-width: 200px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.kanban-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    border-bottom: 2px solid #CD212A;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+}
+
+.kanban-card {
+    background: #FAF3E0;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.kanban-card .cmd-ref {
+    font-weight: bold;
+    color: #CD212A;
+    margin-bottom: 6px;
+}
+
+.kanban-card ul {
+    margin: 6px 0 10px 16px;
+    font-size: 0.85rem;
+}
+
+.kanban-card select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.kanban-card .btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.kanban-card .btn:disabled {
+    background: #AAAAAA;
+    border-color: #AAAAAA;
+    cursor: default;
+    transform: none;
+}
+
+.empty-col {
+    color: #BBBBBB;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 16px 0;
+}
+
+/* ── Phase 3 : Livreur ─────────────────────────────────────────── */
+
+.delivery-detail p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.delivery-detail .detail-label {
+    font-weight: 600;
+    color: #555;
 }
