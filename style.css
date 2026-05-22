@@ -867,3 +867,66 @@ footer {
     font-weight: 600;
     color: #555;
 }
+
+.btn-theme {
+    background: none;
+    /*border: 1px solid #2C2C2C;*/
+    padding: 5px 10px;
+    cursor: pointer;
+    /*border-radius: 5px;*/
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-left: 25px; 
+    border: none;
+}
+
+body.mode-sombre {
+  background-color: #2C2C2C;
+  color: #ffffff;
+}
+
+/* =======================================================
+   CHARTE GRAPHIQUE : ADAPTATION DES BLOCS AU MODE SOMBRE
+   ======================================================= */
+
+/* 1. On assombrit la barre de navigation quand le mode sombre est actif */
+body.mode-sombre .navbar {
+    background: #2C2C2C;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. On change la couleur des liens de navigation pour qu'ils restent visibles */
+body.mode-sombre .nav-links a, 
+body.mode-sombre .dropbtn,
+body.mode-sombre .logo {
+    color: #FAF3E0;
+}
+
+/* 3. On assombrit le fond des cartes de plats italiens */
+body.mode-sombre .card {
+    background: #2C2C2C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. On ajuste la couleur des titres de cartes et descriptions en mode sombre */
+body.mode-sombre .card-title {
+    color: #ffffff;
+}
+body.mode-sombre .card p {
+    color: #BBBBBB;
+}
+
+/* 5. On adapte le titre "Nos spécialités" pour qu'il ressorte bien sur le noir */
+body.mode-sombre .section-title {
+    color: #008C45; /* Vert italien pour donner du style */
+}
+
+/* 6. On applique la couleur claire au texte du bouton-thème quand il est sur fond sombre */
+body.mode-sombre .btn-theme {
+    color: #ffffff;
+}
+
+/* 7. On change la couleur du texte du footer en mode sombre */
+body.mode-sombre .footer-black {
+    color: #F5F5F5; /* Devient blanc cassé pour être lisible sur le fond noir */
+}

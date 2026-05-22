@@ -49,6 +49,8 @@
                 <a href="connexion.php">Se connecter</a>
                 <a href="inscription.php">S'inscrire</a>
                 <?php } ?>
+                        
+                <button id="bouton-theme" class="btn-theme">🌙</button>
 
             </div>
         </div>
@@ -131,9 +133,9 @@
     <footer class="footer-black">
 
         Bella Ciao Ristorante © 2026
-
+            
     </footer>
-
+            <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>
