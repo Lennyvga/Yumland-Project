@@ -60,6 +60,9 @@ foreach ($plats as $plat) {
                 <a href="connexion.php">Se connecter</a>
                 <a href="inscription.php">S'inscrire</a>
                 <?php } ?>
+
+                <button id="bouton-theme" class="btn-theme">🌙</button>
+
             </div>
         </div>
     </nav>
@@ -295,6 +298,7 @@ foreach ($plats as $plat) {
     };
     </script>
 
+     <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>
