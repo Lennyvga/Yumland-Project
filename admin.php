@@ -1,12 +1,10 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['auth']) || $_SESSION['auth']['role'] != 'admin') {
     header('Location: index.php');
     exit();
 }
-
 
 $json = file_get_contents(__DIR__ . "/utilisateurs.json");
 $data = json_decode($json, true);
@@ -29,8 +27,7 @@ $utilisateurs = $data['utilisateurs'];
                 <a href="index.php">Accueil</a>
                 <a href="admin.php">Administration</a>
                 <a href="deconnexion.php">Se déconnecter</a>
-
-                <button id="bouton-theme" class="btn-theme">🌙</button>
+                <button id=\"bouton-theme\" class=\"btn-theme\">🌙</button>
             </div>
         </div>
     </nav>
@@ -38,63 +35,47 @@ $utilisateurs = $data['utilisateurs'];
     <div class="container">
         <h2 class="section-title">Liste des utilisateurs</h2>
 
+        <div class="msg-flash" id="msg-admin" style="display: none;"></div>
+
         <table class="panier-table">
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
                 <th>Rôle</th>
+                <th>Rang Client</th>
                 <th>Statut</th>
-                <th>Inscription</th>
                 <th>Actions</th>
             </tr>
 
             <?php
             foreach ($utilisateurs as $utilisateur) {
+                if ($utilisateur['id'] === $_SESSION['auth']['id']) continue;
+                
                 echo '<tr>';
-                echo '<td>' . $utilisateur['nom'] . '</td>';
-                echo '<td>' . $utilisateur['prenom'] . '</td>';
-                echo '<td>' . $utilisateur['email'] . '</td>';
-                echo '<td>' . $utilisateur['role'] . '</td>';
-                echo '<td>' . $utilisateur['statut'] . '</td>';
-                echo '<td>' . $utilisateur['date_inscription'] . '</td>';
+                echo '<td>' . htmlspecialchars($utilisateur['nom']) . '</td>';
+                echo '<td>' . htmlspecialchars($utilisateur['prenom']) . '</td>';
+                echo '<td>' . htmlspecialchars($utilisateur['email'] ?? '') . '</td>';
+                echo '<td>' . htmlspecialchars($utilisateur['role']) . '</td>';
+                
+                //  Menu déroulant pour modifier le rang en asynchrone
                 echo '<td>';
-                echo '<a href="informations.php?id=' . $utilisateur['id'] . '" class="btn">Voir profil</a> ';
-                echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
-                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                if ($utilisateur['statut'] == 'bloque') {
-                    echo '<input type="hidden" name="action" value="debloquer">';
-                    echo '<button type="submit" class="btn">Débloquer</button>';
-                } else {
-                    echo '<input type="hidden" name="action" value="bloquer">';
-                    echo '<button type="submit" class="btn">Bloquer</button>';
-                }
-                echo '</form>';
-                
-                 echo '<form method="POST" action="bloquer_utilisateur.php" style="display:inline;">';
-                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                echo '<input type="hidden" name="action" value="desactiver">';
-                echo '<button type="submit" class="btn">Désactiver</button>';
-                echo '</form>';
-                
-                echo '<form method="POST" action="badge.php" style="display:inline;">';
-                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                echo '<select name="statut_premium">';
-                echo '<option value="normal">Normal</option>';
-                echo '<option value="premium">Premium</option>';
-                echo '<option value="vip">Compte+</option>';
+                echo '<select class="select-rang" data-id="' . $utilisateur['id'] . '">';
+                echo '<option value="standard" ' . ((!isset($utilisateur['rang']) || $utilisateur['rang'] == 'standard') ? 'selected' : '') . '>Standard</option>';
+                echo '<option value="premium" ' . ((isset($utilisateur['rang']) && $utilisateur['rang'] == 'premium') ? 'selected' : '') . '>Premium</option>';
+                echo '<option value="vip" ' . ((isset($utilisateur['rang']) && $utilisateur['rang'] == 'vip') ? 'selected' : '') . '>VIP</option>';
                 echo '</select>';
-                echo '<button type="submit" class="btn" disabled>Modifier statut</button>';
-                echo '</form>';
-
-              
-                echo '<form method="POST" action="badge.php" style="display:inline;">';
-                echo '<input type="hidden" name="id" value="' . $utilisateur['id'] . '">';
-                echo '<input type="number" name="remise" placeholder="Remise %" min="0" max="100">';
-                echo '<button type="submit" class="btn" disabled>Accorder remise</button>';
-                echo '</form>';
-
                 echo '</td>';
+
+                // Cellule pour afficher le statut en temps réel
+                echo '<td id="status-text-' . $utilisateur['id'] . '">' . htmlspecialchars($utilisateur['statut'] ?? 'actif') . '</td>';
+                
+                echo '<td>';
+                // Tâche 2 : Bouton de blocage asynchrone (Fetch) sans balise <form>
+                $texte_bouton = (isset($utilisateur['statut']) && $utilisateur['statut'] === 'bloque') ? 'Débloquer' : 'Bloquer';
+                echo '<button class="btn btn-action-blocage" data-id="' . $utilisateur['id'] . '" data-statut="' . ($utilisateur['statut'] ?? 'actif') . '">' . $texte_bouton . '</button>';
+                echo '</td>';
+                
                 echo '</tr>';
             }
             ?>
@@ -105,8 +86,70 @@ $utilisateurs = $data['utilisateurs'];
         <p>© 2026 Bella Ciao - Tous droits réservés</p>
     </footer>
 
-
     <script type="text/javascript" src="theme.js"></script>
+
+    <script>
+    // Tâche 2 : Gestion asynchrone du bouton Bloquer/Débloquer
+    const boutons = document.querySelectorAll('.btn-action-blocage');
+    boutons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const userId = this.getAttribute('data-id');
+            const statutActuel = this.getAttribute('data-statut');
+            const actionEnvoyee = (statutActuel === 'bloque') ? 'debloquer' : 'bloquer';
+            
+            const params = new URLSearchParams();
+            params.append('id', userId);
+            params.append('action', actionEnvoyee);
+
+            fetch('bloquer_utilisateur.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            })
+            .then(function() {
+                const msg = document.getElementById('msg-admin');
+                msg.style.display = 'block';
+                msg.className = 'msg-flash msg-ok';
+                msg.textContent = 'Le statut de l utilisateur a ete modifie.';
+
+                if (actionEnvoyee === 'bloquer') {
+                    btn.setAttribute('data-statut', 'bloque');
+                    btn.textContent = 'Débloquer';
+                    document.getElementById('status-text-' + userId).textContent = 'bloque';
+                } else {
+                    btn.setAttribute('data-statut', 'actif');
+                    btn.textContent = 'Bloquer';
+                    document.getElementById('status-text-' + userId).textContent = 'actif';
+                }
+            });
+        });
+    });
+
+    //  Gestion asynchrone du changement de Rang
+    const selects = document.querySelectorAll('.select-rang');
+    selects.forEach(function(select) {
+        select.addEventListener('change', function() {
+            const userId = this.getAttribute('data-id');
+            const nouveauRang = this.value;
+
+            const params = new URLSearchParams();
+            params.append('id', userId);
+            params.append('rang', nouveauRang);
+
+            fetch('modifier_rang_utilisateur.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            })
+            .then(function() {
+                const msg = document.getElementById('msg-admin');
+                msg.style.display = 'block';
+                msg.className = 'msg-flash msg-ok';
+                msg.textContent = 'Le rang de l utilisateur a ete mis a jour.';
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>
