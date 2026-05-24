@@ -1,10 +1,10 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Inscription</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body class="page-inscription">
@@ -48,65 +48,71 @@
                 <a href="inscription.php">S'inscrire</a>
                 <?php } ?>
 
+                <button id="bouton-theme" class="btn-theme">🌙</button>
+
             </div>
         </div>
     </nav>
 
-
-
     <div class="form-wrapper">
 
         <div class="nomrestaurant" id="entete-blanc">
-
             Bella Ciao
         </div><br><br>
 
+        <form action="traitement_inscription.php" method="post" id="form-inscription">
         <div class="ligne">
             <div class="sousligne">
-                <form action="traitement_inscription.php" method="post">
-                    <label for="Nom">Nom</label><br>
-                    <input type="text" id="Nom" name="Nom" required><br><br>
+                <label for="Nom">Nom</label><br>
+                <input type="text" id="Nom" name="Nom"><br>
+                <span id="erreur-nom" class="erreur-message"></span><br>
             </div>
 
             <div class="sousligne">
                 <label for="Prenom">Prenom</label><br>
-                <input type="text" id="Prenom" name="Prenom" required><br><br>
+                <input type="text" id="Prenom" name="Prenom"><br>
+                <span id="erreur-prenom" class="erreur-message"></span><br>
             </div>
-
         </div>
 
         <div class="ligne">
             <div class="sousligne">
                 <label for="Email">Email</label><br>
-                <input type="email" id="Email" name="Email" required><br><br>
+                <input type="text" id="Email" name="Email"><br>
+                <span id="erreur-email" class="erreur-message"></span><br>
             </div>
 
             <div class="sousligne">
                 <label for="Tel">Téléphone</label><br>
-                <input type="tel" id="Tel" name="Téléphone" pattern="[0-9]{10}" placeholder="0612345678"
-                    required><br><br>
+                <input type="text" id="Tel" name="Téléphone" placeholder="0612345678"><br>
+                <span id="erreur-tel" class="erreur-message"></span><br>
             </div>
         </div>
+
         <div class="ligne">
             <div class="sousligne">
                 <label for="Mdp">Mot de passe</label><br>
-                <input type="password" id="Mdp" name="password" minlength="8" required
-                    placeholder="8 caractères minimum avec au moins 1 majuscule"><br><br>
+                <div class="conteneur-mdp">
+                    <input type="password" id="Mdp" name="password" placeholder="8 caractères minimum avec au moins 1 majuscule">
+                    <button type="button" id="bouton-oeil-ins" class="btn-oeil">👁️</button>
+                </div>
+                <span id="erreur-mdp" class="erreur-message"></span><br>
             </div>
         </div>
+
         <div class="ligne">
             <div>
                 <label for="Numpost">Code postal</label><br>
-                <input type="text" name="Code postal" maxlength="5" required><br><br>
+                <input type="text" id="Numpost" name="Code postal" maxlength="5"><br>
+                <span id="erreur-numpost" class="erreur-message"></span><br>
             </div>
 
             <div class="sousligne">
                 <label for="Livraison">Adresse de livraison</label><br>
-                <input type="text" name="adresse" required><br><br>
+                <input type="text" id="Livraison" name="adresse"><br>
+                <span id="erreur-livraison" class="erreur-message"></span><br>
             </div>
-
         </div>
-
 
         <div class="sousligne">
             <label for="Supp">Eléments suplémentaires que vous souhaitez rajouter ?</label>
@@ -120,22 +126,19 @@
         <br>
 
         <div class="nav-links">
-            <span>Si vous avez déjà un compte, veuillez cliquer juste ici ➤ </span>
-            <a href="connexion.php">Se connecter</a>
+            <span class="text-changement">Si vous avez déjà un compte, veuillez cliquer juste ici ➤ </span>
+            <a href="connexion.php" class="a-changement">Se connecter</a>
         </div>
 
         </form>
     </div>
 
-
-
-
-    <footer>
+    <footer class="footer-black">
         <p>© 2026 Bella Ciao - Tous droits réservés</p>
     </footer>
 
-
-
+    <script type="text/javascript" src="theme.js"></script>
+    <script type="text/javascript" src="validation.js"></script>
 </body>
 
 </html>
