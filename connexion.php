@@ -7,10 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $json = file_get_contents("utilisateurs.json");
     $data = json_decode($json, true);
-//on cherche si l'utilisateur existe
+
     foreach ($data['utilisateurs'] as $utilisateur) {
         if ($utilisateur['email'] == $email && password_verify($password, $utilisateur['password'])) {
-          //connexion reussi  
+           
         $_SESSION['auth'] = $utilisateur;
           if ($utilisateur['role'] == 'admin') {
     header('Location: admin.php');
@@ -78,6 +78,7 @@ exit();
                 <a href="inscription.php">S'inscrire</a>
                 <?php } ?>
 
+                    <button id="bouton-theme" class="btn-theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -94,17 +95,22 @@ exit();
             echo '<p style="color:red;">' . $erreur . '</p>';
         }
         ?>
-        <form action="connexion.php" method="post">
+        <form action="connexion.php" method="post" id="form-connexion">
             <div class="ligne">
                 <div class="sousligne">
                     <label for="Email">Email</label><br>
-                    <input type="text" id="Email" name="Email" required><br><br>
+                    <input type="text" id="Email" name="Email" ><br>
+                    <span id="erreur1" class="erreur-message"></span><br>
                 </div>
 
                 <div class="sousligne">
-                    <label for="Mdp">Mot de passe </label><br>
-                    <input type="password" id="Mdp" name="Mdp" pattern="(?=.*[A-Z]).{8,}" required><br><br>
-                </div>
+                    <label for="Mdp">Mot de passe</label><br>
+                    <div class="conteneur-mdp">
+                        <input type="password" id="Mdp" name="Mdp">
+                        <button type="button" id="bouton-oeil" class="btn-oeil">👁️</button>
+                    </div>
+                    <span id="erreur2" class="erreur-message"></span><br>
+            </div>
 
             </div>
 
@@ -113,8 +119,8 @@ exit();
             </div>
 
             <div class="nav-links">
-                <br><br> <span>Si vous n'avez pas de compte, veuillez cliquer juste ici ➤ </span>
-                <a href="inscription.php">S'inscrire</a>
+                <br><br> <span class="text-changement">Si vous n'avez pas de compte, veuillez cliquer juste ici ➤ </span>
+                <a href="inscription.php" class="a-changement">S'inscrire</a>
             </div>
 
 
@@ -122,10 +128,12 @@ exit();
         </form>
     </div>
 
-    <footer>
+    <footer class="footer-black">
         <p>© 2026 Bella Ciao - Tous droits réservés</p>
     </footer>
 
+        <script type="text/javascript" src="theme.js"></script>
+        <script type="text/javascript" src="validation.js"></script>
 </body>
 
 </html>
