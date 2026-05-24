@@ -11,7 +11,18 @@ $data_cmd  = json_decode(file_get_contents("commandes.json"), true);
 
 $commandes_a_noter = [];
 foreach ($data_cmd['commandes'] as $c) {
-    if ($c['id_client'] == $id_client && $c['statut'] === 'livree' && empty($c['note'])) {
+
+    $nom_client_connecte = $_SESSION['auth']['prenom'] . ' ' . $_SESSION['auth']['nom'];
+
+    $est_le_bon_client = false;
+    
+    if (isset($c['id_client']) && $c['id_client'] == $id_client) {
+        $est_le_bon_client = true;
+    } elseif (isset($c['utilisateur']) && $c['utilisateur'] === $nom_client_connecte) {
+        $est_le_bon_client = true;
+    }
+
+    if ($est_le_bon_client && isset($c['statut']) && $c['statut'] === 'livree' && empty($c['note'])) {
         $commandes_a_noter[] = $c;
     }
 }

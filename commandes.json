@@ -98,6 +98,32 @@
             "adresse": "",
             "statut": "en_attente_paiement",
             "date_commande": "2026-05-24 13:29:05"
+        },
+        {
+            "id": "6a1301fde28a4",
+            "utilisateur": "jean.dupont@gmail.com",
+            "articles": [
+                {
+                    "id": "p3",
+                    "nom": "Pizza Pepperoni",
+                    "quantite": 1,
+                    "prix": 14,
+                    "sous_total": 14
+                },
+                {
+                    "id": "p14",
+                    "nom": "Mojito",
+                    "quantite": 1,
+                    "prix": 2,
+                    "sous_total": 2
+                }
+            ],
+            "total": 16,
+            "mode": "emporter",
+            "datetime": "2026-05-24T18:49",
+            "adresse": "",
+            "statut": "en_attente_paiement",
+            "date_commande": "2026-05-24 13:49:49"
         }
     ]
 }
