@@ -1,16 +1,19 @@
-Lenny s'est concentré sur les fonctionnalités de production en cuisine et sur les leviers de fidelisation côté client :
-- Interface Restaurateur : Développement de la console de gestion permettant au restaurateur de visualiser les commandes entrantes et de faire évoluer leur statut de préparation (Commande reçue, En cuisine, Prête).
-- Module d'Abonnement (Bella Ciao +) : Conception et intégration de la page dédiée à la souscription d'un abonnement premium par les clients afin de débloquer des avantages exclusifs.
-- Moteur de Codes Promos : Implémentation du système de vérification et d'application des réductions commerciales lors de l'étape de validation du panier.
+Lenny :
+Changement charte graphique (mode clair/sombre) via le bouton + chargement CSS sans rechargement.
+sauvegarde du mode d'affichage dans un coockie + verification au chargement.
+validation du coté client de tous les formulaires sans rechargement (inscription, connextion...).
+afficher/masquer les mot de passe.
 
-Sarah a pris en charge la gestion logistique post-préparation ainsi que les outils d'évaluation de l'application :
-- interface Livreur : Création de l'application mobile/web pour les coursiers, leur permettant de s'assigner une commande disponible, de suivre les livraisons en cours et de valider la remise au client.
-- système de Panier & Tunnel d'Achat : Finalisation des étapes de commande et intégration du module de notation permettant aux clients de laisser un avis et une note après réception de leur repas.
-- Calcul des Frais de Livraison : Développement de l'algorithme de calcul des frais de port en fonction du montant total du panier ou de critères de distance.
+Sarah :
+Filtre et tris sur la page produit (requete asynchrone pour les filtres)
+modification d'une commande non payé encore en preparation (ajout/suprression de produit et modification du montant total).
+pairment additionnel si commande plus cher, gestion ticket de reduction si moin cher.
+page commande du restaurateur : changement de statut (payé -> en preparation -> prete -> livreur assigné).
+coté livreur : indication comme quoi une commande a été livré.
+coté client : notation d'une commande livré (une seul fois uniquement en livraison).
 
-Ziane a sécurisé l'application, développé l'interface d'administration globale et rendu la gestion des comptes totalement asynchrone :
-- profil client dynamique : Création du formulaire de modification des coordonnées personnelles avec mise à jour du fichier JSON en arrière-plan sans rechargement de page.
-- Console d'Administration (admin_utilisateurs.php) : Développement de l'interface centrale sous forme de tableau pour l'administrateur afin de lister et contrôler tous les utilisateurs inscrits.
-- Bouton de Blocage  : Intégration d'une action asynchrone permettant à l'admin de bannir ou débloquer un compte utilisateur instantanément d'un simple clic.
-- éjection en Temps Réel  : Ajout d'une sécurité au point d'entrée du site (index.php) qui détruit immédiatement la session d'un utilisateur dès qu'il est marqué comme bloqué.
-- Gestion des Niveaux  : Ajout d'un menu déroulant permettant à l'administrateur de modifier le rang d'un client (Standard, Premium, VIP) pour ajuster ses droits sur le site.
+Ziane :
+Page de profil : modification des informations via le bouton, envoie en connextion asynchrone.
+coté admin : blocage/déblocage d'un utilisateur en asychrone.
+Si utilisateur bloqué, les commandes déjà payées continuent leur cycle (préparation livraison).
+coté admin : modification de statut utilisateur (standard prenium VIP).
