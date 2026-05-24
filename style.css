@@ -888,3 +888,15 @@ body.mode-sombre .a-changement{
 body.mode-sombre .btn-oeil {
     filter: drop-shadow(0px 0px 1px #FAF3E0);
 }
+
+.style-compteur {
+    font-size: 11px;
+    color: #888888;
+    font-weight: normal;
+    margin-left: 5px;
+    text-transform: none; 
+}
+
+body.mode-sombre .style-compteur {
+    color: #aaaaaa;
+}

@@ -101,6 +101,37 @@ if (monFormIns) {
         };
     }
 
+    // --- COMPTEURS DE CARACTÈRES EN TEMPS RÉEL ---
+    const compteurTel = document.getElementById("compteur-tel");
+    const compteurMdp = document.getElementById("compteur-mdp");
+    const compteurPostal = document.getElementById("compteur-postal");
+
+    // 1. Pour le Téléphone (0/10)
+    if (boiteTel && compteurTel) {
+        boiteTel.oninput = function() {
+            compteurTel.textContent = "(" + boiteTel.value.length + "/10)";
+        };
+    }
+
+    // 2. Pour le Mot de passe (X min)
+    if (boiteMdpIns && compteurMdp) {
+        boiteMdpIns.oninput = function() {
+            let longueur = boiteMdpIns.value.length;
+            if (longueur < 8) {
+                compteurMdp.textContent = "(" + longueur + "/8 min)";
+            } else {
+                compteurMdp.textContent = "(OK)";
+            }
+        };
+    }
+
+    // 3. Pour le Code postal (0/5)
+    if (boiteNumpost && compteurPostal) {
+        boiteNumpost.oninput = function() {
+            compteurPostal.textContent = "(" + boiteNumpost.value.length + "/5)";
+        };
+    }
+
     monFormIns.onsubmit = function(evt) {
     
         zoneErreurNom.textContent = "";

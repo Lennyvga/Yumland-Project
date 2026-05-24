@@ -83,7 +83,7 @@
             </div>
 
             <div class="sousligne">
-                <label for="Tel">Téléphone</label><br>
+                <label for="Tel">Téléphone <span id="compteur-tel" class="style-compteur">(0/10)</span></label>
                 <input type="text" id="Tel" name="Téléphone" placeholder="0612345678"><br>
                 <span id="erreur-tel" class="erreur-message"></span><br>
             </div>
@@ -91,7 +91,7 @@
 
         <div class="ligne">
             <div class="sousligne">
-                <label for="Mdp">Mot de passe</label><br>
+                <label for="Mdp">Mot de passe <span id="compteur-mdp" class="style-compteur">(0 min)</span></label>
                 <div class="conteneur-mdp">
                     <input type="password" id="Mdp" name="password" placeholder="8 caractères minimum avec au moins 1 majuscule">
                     <button type="button" id="bouton-oeil-ins" class="btn-oeil">👁️</button>
@@ -101,8 +101,8 @@
         </div>
 
         <div class="ligne">
-            <div>
-                <label for="Numpost">Code postal</label><br>
+             <div>
+                <label for="Numpost">Code postal <span id="compteur-postal" class="style-compteur">(0/5)</span></label><br>
                 <input type="text" id="Numpost" name="Code postal" maxlength="5"><br>
                 <span id="erreur-numpost" class="erreur-message"></span><br>
             </div>
