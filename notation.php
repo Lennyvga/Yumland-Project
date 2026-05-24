@@ -23,7 +23,8 @@ foreach ($data_cmd['commandes'] as $c) {
     <title>Notation - Bella Ciao</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-notation">
+
+<body>
 
 <nav class="navbar">
     <div class="container nav-content">
@@ -40,6 +41,8 @@ foreach ($data_cmd['commandes'] as $c) {
                 </div>
             </div>
             <a href="deconnexion.php">Se déconnecter</a>
+
+            <button id="bouton-theme" class="btn-theme">🌙</button>
         </div>
     </div>
 </nav>
@@ -100,7 +103,7 @@ foreach ($data_cmd['commandes'] as $c) {
 
 </div>
 
-<footer>Bella Ciao Ristorante © 2026</footer>
+<footer class="footer-black">Bella Ciao Ristorante © 2026</footer>
 
 <script>
 
@@ -163,5 +166,6 @@ foreach ($data_cmd['commandes'] as $c) {
 
 </script>
 
+        <script type="text/javascript" src="theme.js"></script>
 </body>
 </html>

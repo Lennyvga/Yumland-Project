@@ -1,31 +1,103 @@
 {
-  "commandes": [
-    {
-      "id": "CMD-2026-001",
-      "utilisateur": "Jean Dupont",
-      "id_client": 1,
-      "datetime": "2026-04-05 18:30:00",
-      "articles": [
-        { "id": 1, "nom": "Pizza Margherita", "quantite": 2, "prix": 12.5 },
-        { "id": 10, "nom": "Tiramisu Maison", "quantite": 1, "prix": 6.0 }
-      ],
-      "total": 31.0,
-      "statut": "accepted",
-      "id_livreur": null,
-      "adresse": "12 Rue de la Paix, 75002 Paris"
-    },
-    {
-      "id": "CMD-2026-002",
-      "utilisateur": "Marie Curie",
-      "id_client": 3,
-      "datetime": "2026-04-05 19:15:00",
-      "articles": [
-        { "id": 4, "nom": "Lasagnes à la Bolognaise", "quantite": 1, "prix": 14.0 }
-      ],
-      "total": 14.0,
-      "statut": "en_preparation",
-      "id_livreur": null,
-      "adresse": "5 Avenue des Arts, 95000 Cergy"
-    }
-  ]
+    "commandes": [
+        {
+            "id": "CMD-2026-001",
+            "utilisateur": "Jean Dupont",
+            "id_client": 1,
+            "datetime": "2026-04-05 18:30:00",
+            "articles": [
+                {
+                    "id": 1,
+                    "nom": "Pizza Margherita",
+                    "quantite": 2,
+                    "prix": 12.5
+                },
+                {
+                    "id": 10,
+                    "nom": "Tiramisu Maison",
+                    "quantite": 1,
+                    "prix": 6
+                }
+            ],
+            "total": 31,
+            "statut": "accepted",
+            "id_livreur": null,
+            "adresse": "12 Rue de la Paix, 75002 Paris"
+        },
+        {
+            "id": "CMD-2026-002",
+            "utilisateur": "Marie Curie",
+            "id_client": 3,
+            "datetime": "2026-04-05 19:15:00",
+            "articles": [
+                {
+                    "id": 4,
+                    "nom": "Lasagnes \u00e0 la Bolognaise",
+                    "quantite": 1,
+                    "prix": 14
+                }
+            ],
+            "total": 14,
+            "statut": "en_preparation",
+            "id_livreur": null,
+            "adresse": "5 Avenue des Arts, 95000 Cergy"
+        },
+        {
+            "id": "6a12d2f87c3b5",
+            "utilisateur": "jean.dupont@gmail.com",
+            "articles": [
+                {
+                    "id": "p1",
+                    "nom": "Pizza Margherita",
+                    "quantite": 1,
+                    "prix": 12,
+                    "sous_total": 12
+                }
+            ],
+            "total": 12,
+            "mode": "sur_place",
+            "datetime": "2026-05-09T12:29",
+            "adresse": "10 rue Bella Ciao, 75002 Paris",
+            "statut": "en_attente_paiement",
+            "date_commande": "2026-05-24 10:29:12"
+        },
+        {
+            "id": "6a12d7380bed2",
+            "utilisateur": "jean.dupont@gmail.com",
+            "articles": [
+                {
+                    "id": "p1",
+                    "nom": "Pizza Margherita",
+                    "quantite": 1,
+                    "prix": 12,
+                    "sous_total": 12
+                }
+            ],
+            "total": 12,
+            "mode": "sur_place",
+            "datetime": "",
+            "adresse": "",
+            "statut": "en_attente_paiement",
+            "date_commande": "2026-05-24 10:47:20"
+        },
+        {
+            "id": "6a12fd2131b61",
+            "utilisateur": "jean.dupont@gmail.com",
+            "articles": [
+                {
+                    "id": "p1",
+                    "nom": "Pizza Margherita",
+                    "quantite": 1,
+                    "prix": 12,
+                    "sous_total": 12
+                }
+            ],
+            "total": 12,
+            "mode": "sur_place",
+            "datetime": "",
+            "adresse": "",
+            "statut": "en_attente_paiement",
+            "date_commande": "2026-05-24 13:29:05"
+        }
+    ]
 }

@@ -28,6 +28,8 @@ $livreurs = array_filter($donnees_users['utilisateurs'], function($u) {
         <div class="nav-links">
             <a href="index.php">Accueil</a>
             <a href="deconnexion.php">Se déconnecter</a>
+
+             <button id="bouton-theme" class="btn-theme">🌙</button>
         </div>
     </div>
 </nav>
@@ -131,7 +133,7 @@ $livreurs = array_filter($donnees_users['utilisateurs'], function($u) {
 <div class="toast msg-ok" id="toast-ok"></div>
 <div class="toast msg-err" id="toast-err"></div>
 
-<footer>Bella Ciao Ristorante © 2026</footer>
+<footer class="footer-black">Bella Ciao Ristorante © 2026</footer>
 
 <script>
 
@@ -192,5 +194,6 @@ $livreurs = array_filter($donnees_users['utilisateurs'], function($u) {
 
 </script>
 
+        <script type="text/javascript" src="theme.js"></script>
 </body>
 </html>

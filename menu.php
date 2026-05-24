@@ -1,17 +1,14 @@
 <?php
 session_start();
 
-// Chargement des menus
 $json_menus = file_get_contents("menus.json");
 $data_menus = json_decode($json_menus, true);
 $menus = $data_menus['menus'];
 
-// Chargement des plats
 $json = file_get_contents("plats.json");
 $data = json_decode($json, true);
 $plats = $data['plats'];
 
-// Indexation des plats par ID pour l'affichage dans les blocs menus
 $plats_par_id = [];
 foreach ($plats as $plat) {
     $plats_par_id[$plat['id']] = $plat;
@@ -174,29 +171,26 @@ foreach ($plats as $plat) {
         </div>
     </section>
 
-    <footer>
+    <footer class="footer-black">
         Bella Ciao Ristorante © 2026
     </footer>
 
         <script>
     let categorieActuelle = 'tous';
 
-    // Écouteur sur la barre de recherche
     document.getElementById('recherche').addEventListener('input', appliquerFiltresEtTri);
 
     function filtrerCategorie(categorie, bouton) {
         categorieActuelle = categorie;
 
-        // Gestion visuelle du bouton filtre actif
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
         bouton.classList.add('active');
 
-        // On lance le fetch (requête async vers le serveur)
         chargerPlatsAsync();
     }
 
     function appliquerFiltresEtTri() {
-        // Pour la recherche et le tri : on travaille sur les cartes déjà affichées (côté JS, comme avant)
+
         const rechercheValeur  = document.getElementById('recherche').value.toLowerCase().trim();
         const allergeneExclure = document.getElementById('filtre-allergene').value;
         const triOption        = document.getElementById('tri-prix').value;
@@ -215,7 +209,6 @@ foreach ($plats as $plat) {
             card.style.display = (matchRecherche && matchAllergene) ? '' : 'none';
         });
 
-        // Tri par prix
         if (triOption === 'croissant') {
             platsCards.sort((a, b) => parseFloat(a.getAttribute('data-prix')) - parseFloat(b.getAttribute('data-prix')));
             platsCards.forEach(card => conteneur.appendChild(card));
@@ -225,30 +218,20 @@ foreach ($plats as $plat) {
         }
     }
 
-    // -------------------------------------------------------
-    // NOUVEAU : requête async vers get_plats.php
-    // Appelée quand on change de catégorie
-    // -------------------------------------------------------
     function chargerPlatsAsync() {
         const conteneur = document.getElementById('conteneur-plats');
-
-        // On affiche un message pendant le chargement
         conteneur.innerHTML = '<p style="text-align:center;color:#888;">⏳ Chargement...</p>';
-
-        // fetch envoie la requête au serveur SANS recharger la page
         fetch('get_plats.php?categorie=' + categorieActuelle)
             .then(function(reponse) {
-                return reponse.json(); // on convertit la réponse JSON en tableau JS
+                return reponse.json(); 
             })
             .then(function(plats) {
-                conteneur.innerHTML = ''; // on vide le conteneur
-
+                conteneur.innerHTML = ''; 
                 if (plats.length === 0) {
                     conteneur.innerHTML = '<p style="text-align:center;color:#aaa;">Aucun plat trouvé.</p>';
                     return;
                 }
 
-                // On recrée une carte HTML pour chaque plat reçu
                 plats.forEach(function(plat) {
                     let allergeneHtml = '';
                     if (plat.allergenes && plat.allergenes.length > 0) {
@@ -260,7 +243,6 @@ foreach ($plats as $plat) {
 
                     let carte = document.createElement('div');
                     carte.className = 'card plat-item';
-                    // On garde les data-attributes pour que appliquerFiltresEtTri() continue à fonctionner
                     carte.setAttribute('data-categorie', plat.categorie);
                     carte.setAttribute('data-nom', plat.nom.toLowerCase());
                     carte.setAttribute('data-description', plat.description.toLowerCase());
@@ -283,7 +265,6 @@ foreach ($plats as $plat) {
                     conteneur.appendChild(carte);
                 });
 
-                // On réapplique la recherche et le tri sur les nouvelles cartes
                 appliquerFiltresEtTri();
             })
             .catch(function(erreur) {
@@ -292,7 +273,6 @@ foreach ($plats as $plat) {
             });
     }
 
-    // Au chargement de la page, on charge tous les plats via async
     window.onload = function() {
         chargerPlatsAsync();
     };

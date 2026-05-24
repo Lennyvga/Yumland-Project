@@ -49,6 +49,8 @@
                 <a href="inscription.php">S'inscrire</a>
                 <?php } ?>
 
+                <button id="bouton-theme" class="btn-theme">🌙</button>
+
             </div>
         </div>
     </nav>
@@ -89,6 +91,7 @@
         <p>© 2026 Bella Ciao - Tous droits réservés</p>
     </footer>
 
+                  <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>

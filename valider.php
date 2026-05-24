@@ -24,6 +24,8 @@ if (!isset($_SESSION['auth'])) {
                 <a href="index.php">Accueil</a>
                 <a href="menu.php">Menu</a>
                 <a href="panier.php">Panier</a>
+
+                <button id="bouton-theme" class="btn-theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -78,6 +80,7 @@ if (!isset($_SESSION['auth'])) {
         Bella Ciao Ristorante © 2026
     </footer>
 
+         <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>

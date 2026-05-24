@@ -48,6 +48,8 @@
                 <a href="connexion.php">Se connecter</a>
                 <a href="inscription.php">S'inscrire</a>
                 <?php } ?>
+                    
+                 <button id="bouton-theme" class="btn-theme">🌙</button>
 
             </div>
         </div>
@@ -62,15 +64,16 @@
             Votre opinion nous aide à nous améliorer chaque jour! ❤️
         </p>
 
-        <a href="index.html" class="btn">Retour à l’accueil</a>
+        <a href="index.php" class="btn">Retour à l’accueil</a>
 
     </div>
 
 
-    <footer>
+    <footer class="footer-black">
         © 2026 Bella Ciao - Tous droits réservés
     </footer>
 
+            <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>

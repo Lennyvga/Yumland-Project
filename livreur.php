@@ -25,7 +25,7 @@ foreach ($data['commandes'] as $com) {
     <title>Bella Ciao - Livraison</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="page-livreur">
+<body>
 
 <nav class="navbar">
     <div class="container nav-content">
@@ -33,6 +33,8 @@ foreach ($data['commandes'] as $com) {
         <div class="nav-links">
             <a href="index.php">Accueil</a>
             <a href="deconnexion.php">Se déconnecter</a>
+
+            <button id="bouton-theme" class="btn-theme">🌙</button>
         </div>
     </div>
 </nav>
@@ -90,7 +92,7 @@ foreach ($data['commandes'] as $com) {
 
 </div>
 
-<footer>Bella Ciao Ristorante © 2026</footer>
+<footer class="footer-black">Bella Ciao Ristorante © 2026</footer>
 
 <script>
 
@@ -134,5 +136,6 @@ foreach ($data['commandes'] as $com) {
 
 </script>
 
+    <script type="text/javascript" src="theme.js"></script>
 </body>
 </html>

@@ -29,6 +29,8 @@ $utilisateurs = $data['utilisateurs'];
                 <a href="index.php">Accueil</a>
                 <a href="admin.php">Administration</a>
                 <a href="deconnexion.php">Se déconnecter</a>
+
+                <button id="bouton-theme" class="btn-theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -99,9 +101,12 @@ $utilisateurs = $data['utilisateurs'];
         </table>
     </div>
 
-    <footer>
+    <footer class="footer-black">
         <p>© 2026 Bella Ciao - Tous droits réservés</p>
     </footer>
+
+
+    <script type="text/javascript" src="theme.js"></script>
 </body>
 
 </html>
