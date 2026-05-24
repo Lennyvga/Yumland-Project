@@ -6,12 +6,10 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #FAF3E0;
-    color: #2C2C2C;
+    color: #2C2C2C
 }
 
 .container {
@@ -19,8 +17,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-
-
 
 .navbar {
     background: #FFFFFF;
@@ -52,8 +48,6 @@ body {
 .nav-links a:hover {
     color: #CD212A;
 }
-
-
 
 .hero {
     height: 70vh;
@@ -87,8 +81,6 @@ body {
     margin-bottom: 10px;
 }
 
-
-
 .search {
     margin: 40px 0;
     display: flex;
@@ -102,15 +94,11 @@ body {
     border: 1px solid#DDDDDD;
 }
 
-
-
-
 .section-title {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-bottom: 20px;
 }
-
 
 .cards {
     display: flex;
@@ -151,23 +139,16 @@ body {
     font-weight: 600;
 }
 
-
-
-
-
 .btn:hover {
     background: #CD212A;
     transform: translateY(-3px);
 }
-
-
 
 footer {
     margin-top: 60px;
     padding: 30px;
     text-align: center;
     color: #FFFFFF;
-   
 }
 
 .footer-black{
@@ -192,7 +173,6 @@ footer {
     justify-content: center;
 }
 
-
 .btn,
 .filter-btn {
     padding: 10px 20px;
@@ -205,12 +185,10 @@ footer {
     border: 1px solid #008C45;
 }
 
-
 .btn {
     background: #008C45;
     color: #FFFFFF;
 }
-
 
 .filter-btn {
     background: #FFFFFF;
@@ -222,19 +200,17 @@ footer {
     color: #FFFFFF;
 }
 
-
-.page-inscription {
+/*.page-inscription {
   background-image: url("images/patesphoto copie.jpg");
   background-size: cover;      
   background-position: center; 
   background-repeat: no-repeat; 
   background-attachment: fixed; 
-}
+}*/
 
 .page-inscription .form-wrapper {
     margin: 60px auto;
 }
-
 
 .page-inscription .form-wrapper {
     background: #FFFFFF;
@@ -303,29 +279,22 @@ footer {
     outline: none;
 }
 
-
-
-
-
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-
 @media (max-width: 768px) {
     .page-inscription .ligne {
         flex-direction: column;
     }
 }
-
 
 .page-notation {
   background-image: url("images/patesphoto copie.jpg");
@@ -347,10 +316,7 @@ footer {
 
 .notation-subtitle {
     margin-bottom: 30px;
-
 }
-
-
 
 .notation-form textarea {
     width: 100%;
@@ -387,12 +353,10 @@ footer {
     padding: 0 5px;
 }
 
-/* Hover */
 .rating label:hover,
 .rating label:hover~label {
     color: #FFD700;
 }
-
 
 .rating input:checked~label {
     color: #FFD700;
@@ -401,7 +365,6 @@ footer {
 .send {
     text-align: center;
 }
-
 
 .page-merci {
     background: linear-gradient(135deg, #FAF3E0, #ffffff);
@@ -429,8 +392,6 @@ footer {
     font-size: 16px;
     color: #898989;
 }
-
-
 
 .page-admin {
     padding: 60px 0;
@@ -464,9 +425,6 @@ footer {
     background: #FAF3E0;
 }
 
-
-
-
 .page-restaurateur {
     padding: 60px 0;
 }
@@ -489,9 +447,6 @@ footer {
     margin-bottom: 20px;
 }
 
-
-
-
 .page-livreur {
     padding: 60px 20px;
 }
@@ -511,17 +466,11 @@ footer {
     margin-bottom: 15px;
 }
 
-
-
-
 @media (max-width: 768px) {
-
     .orders-container {
         flex-direction: column;
     }
-
 }
-
 
 .section-title2 {
     font-family: 'Playfair Display', serif;
@@ -531,12 +480,9 @@ footer {
     text-align: center;
 }
 
-
 .btn-link {
     text-decoration: none;
 }
-
-
 
 .dropdown {
   position: relative;
@@ -550,7 +496,6 @@ footer {
  font-weight: 500;
 }
 
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -559,7 +504,6 @@ footer {
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 
 .dropdown-content a {
   color: black;
@@ -570,11 +514,9 @@ footer {
 
 .dropdown-content a:hover { background-color: #ddd; }
 
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 
 .edit-link {
     color: #333;            
@@ -583,12 +525,9 @@ footer {
     margin-left: 10px;      
 }
 
-
 .edit-link:hover {
     color: #e74c3c;        
 }
-
-
 
 .plus-symbol {
     color: #ffd700;
@@ -606,7 +545,6 @@ footer {
     border-radius: 10px;
     border: 1px dashed #ffd700;
 }
-
 
 .btn-premium {
     background-color: #ffd700 !important; 
@@ -631,7 +569,7 @@ footer {
 
 .valider-commande-background{
     background-color: #27ae60;
-}/* ── Phase 3 : Modifications commandes  ────────────────────────── */
+}
 
 .modifier-grid {
     display: flex;
@@ -727,8 +665,6 @@ footer {
 .diff-plus  { color: #CD212A; font-weight: 600; margin-top: 4px; }
 .diff-moins { color: #008C45; font-weight: 600; margin-top: 4px; }
 
-/* ── Phase 3 : Messages flash ──────────────────────────────────── */
-
 .msg-flash {
     display: none;
     padding: 14px 20px;
@@ -741,8 +677,6 @@ footer {
 .msg-ok  { background: #d4edda; color: #155724; }
 .msg-err { background: #f8d7da; color: #721c24; }
 
-/* ── Phase 3 : Toast notification ──────────────────────────────── */
-
 .toast {
     position: fixed;
     bottom: 28px;
@@ -754,8 +688,6 @@ footer {
     z-index: 999;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
-
-/* ── Phase 3 : Commande à noter ────────────────────────────────── */
 
 .commande-a-noter {
     background: #FFFFFF;
@@ -781,8 +713,6 @@ footer {
     max-width: 660px;
     margin: 40px auto;
 }
-
-/* ── Phase 3 : Restaurateur kanban ─────────────────────────────── */
 
 .kanban {
     display: flex;
@@ -856,8 +786,6 @@ footer {
     padding: 16px 0;
 }
 
-/* ── Phase 3 : Livreur ─────────────────────────────────────────── */
-
 .delivery-detail p {
     margin: 8px 0;
     font-size: 1rem;
@@ -870,10 +798,8 @@ footer {
 
 .btn-theme {
     background: none;
-    /*border: 1px solid #2C2C2C;*/
     padding: 5px 10px;
     cursor: pointer;
-    /*border-radius: 5px;*/
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     margin-left: 25px; 
@@ -885,30 +811,22 @@ body.mode-sombre {
   color: #ffffff;
 }
 
-/* =======================================================
-   CHARTE GRAPHIQUE : ADAPTATION DES BLOCS AU MODE SOMBRE
-   ======================================================= */
-
-/* 1. On assombrit la barre de navigation quand le mode sombre est actif */
 body.mode-sombre .navbar {
     background: #2C2C2C;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* 2. On change la couleur des liens de navigation pour qu'ils restent visibles */
 body.mode-sombre .nav-links a, 
 body.mode-sombre .dropbtn,
 body.mode-sombre .logo {
     color: #FAF3E0;
 }
 
-/* 3. On assombrit le fond des cartes de plats italiens */
 body.mode-sombre .card {
     background: #2C2C2C;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* 4. On ajuste la couleur des titres de cartes et descriptions en mode sombre */
 body.mode-sombre .card-title {
     color: #ffffff;
 }
@@ -916,17 +834,57 @@ body.mode-sombre .card p {
     color: #BBBBBB;
 }
 
-/* 5. On adapte le titre "Nos spécialités" pour qu'il ressorte bien sur le noir */
 body.mode-sombre .section-title {
-    color: #008C45; /* Vert italien pour donner du style */
+    color: #008C45; 
 }
 
-/* 6. On applique la couleur claire au texte du bouton-thème quand il est sur fond sombre */
 body.mode-sombre .btn-theme {
     color: #ffffff;
 }
 
-/* 7. On change la couleur du texte du footer en mode sombre */
 body.mode-sombre .footer-black {
-    color: #F5F5F5; /* Devient blanc cassé pour être lisible sur le fond noir */
+    color: #F5F5F5; 
+}
+
+body.mode-sombre .text-changement {
+    color: #000000;
+}
+
+body.mode-sombre .a-changement{
+    color: #000000 !important;
+}
+
+.erreur-message {
+    color: #CD212A; 
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.conteneur-mdp {
+    display: table; 
+    width: 100%;
+}
+
+.conteneur-mdp input {
+    display: table-cell;
+    width: 85%;
+}
+
+.btn-oeil {
+    display: table-cell;
+    width: 15%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+body.mode-sombre .btn-oeil {
+    filter: drop-shadow(0px 0px 1px #FAF3E0);
 }
