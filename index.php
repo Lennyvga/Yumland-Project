@@ -1,4 +1,19 @@
-<?php session_start(); ?>
+<?php session_start();
+
+if (isset($_SESSION['auth'])) {
+    $liste_utilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
+    
+    foreach ($liste_utilisateurs['utilisateurs'] as $u_verif) {
+        if ($u_verif['id'] === $_SESSION['auth']['id'] && isset($u_verif['statut']) && $u_verif['statut'] === 'bloque') {
+            session_destroy();
+            header('Location: connexion.php');
+            exit();
+        }
+    } 
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
