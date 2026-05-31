@@ -7,21 +7,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $json = file_get_contents("utilisateurs.json");
     $data = json_decode($json, true);
-
+//on cherche si l'utilisateur existe
     foreach ($data['utilisateurs'] as $utilisateur) {
         if ($utilisateur['email'] == $email && password_verify($password, $utilisateur['password'])) {
            
+        // Vérifier que le compte n'est pas bloqué
+        if (isset($utilisateur['statut']) && $utilisateur['statut'] === 'bloque') {
+            $erreur = "Votre compte a été bloqué. Contactez l'administrateur.";
+            break;
+        }
+
+        // Régénérer l'ID de session pour éviter la fixation de session
+        session_regenerate_id(true);
+
         $_SESSION['auth'] = $utilisateur;
-          if ($utilisateur['role'] == 'admin') {
-    header('Location: admin.php');
-} else if ($utilisateur['role'] == 'restaurateur') {
-    header('Location: restaurateur.php');
-} else if ($utilisateur['role'] == 'livreur') {
-    header('Location: livreur.php');
-} else {
-    header('Location: index.php');
-          }
-exit();
+
+        if ($utilisateur['role'] == 'admin') {
+            header('Location: admin.php');
+        } else if ($utilisateur['role'] == 'restaurateur') {
+            header('Location: restaurateur.php');
+        } else if ($utilisateur['role'] == 'livreur') {
+            header('Location: livreur.php');
+        } else {
+            header('Location: index.php');
+        }
+        exit();
     }
         }
 
