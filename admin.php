@@ -71,7 +71,7 @@ $utilisateurs = $data['utilisateurs'];
                 echo '<td id="status-text-' . $utilisateur['id'] . '">' . htmlspecialchars($utilisateur['statut'] ?? 'actif') . '</td>';
                 
                 echo '<td>';
-                // Tâche 2 : Bouton de blocage asynchrone (Fetch) sans balise <form>
+                //  Bouton de blocage asynchrone 
                 $texte_bouton = (isset($utilisateur['statut']) && $utilisateur['statut'] === 'bloque') ? 'Débloquer' : 'Bloquer';
                 echo '<button class="btn btn-action-blocage" data-id="' . $utilisateur['id'] . '" data-statut="' . ($utilisateur['statut'] ?? 'actif') . '">' . $texte_bouton . '</button>';
                 echo '</td>';
@@ -89,7 +89,7 @@ $utilisateurs = $data['utilisateurs'];
     <script type="text/javascript" src="theme.js"></script>
 
     <script>
-    // Tâche 2 : Gestion asynchrone du bouton Bloquer/Débloquer
+    // Gestion asynchrone du bouton Bloquer/Débloquer
     const boutons = document.querySelectorAll('.btn-action-blocage');
     boutons.forEach(function(btn) {
         btn.addEventListener('click', function() {
